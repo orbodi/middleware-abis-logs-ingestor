@@ -1,0 +1,31 @@
+Bilan abis-logs-ingestor
+========================
+
+Fichier d'entrée : C:\Users\Abdoul\OneDrive\Desktop\demo\projets\abis_logs_ingestor\storage\inputs\processing_data\auditlog-2025-11-10_08.0.log
+Fichier JSON     : C:\Users\Abdoul\OneDrive\Desktop\demo\projets\abis_logs_ingestor\storage\json_data\auditlog-2025-11-10_08.0.json
+
+Total lignes lues : 36
+Événements parsés : 36
+Lignes en échec   : 0
+
+Premières erreurs :
+- Ligne 1: JSONDecodeError - Expecting ',' delimiter: line 1 column 330 (char 329)
+- Ligne 2: JSONDecodeError - Expecting ',' delimiter: line 1 column 963 (char 962)
+- Ligne 3: JSONDecodeError - Expecting ',' delimiter: line 1 column 330 (char 329)
+- Ligne 4: JSONDecodeError - Expecting ',' delimiter: line 1 column 964 (char 963)
+- Ligne 5: JSONDecodeError - Expecting ',' delimiter: line 1 column 330 (char 329)
+- Ligne 6: JSONDecodeError - Expecting ',' delimiter: line 1 column 963 (char 962)
+- Ligne 7: JSONDecodeError - Expecting ',' delimiter: line 1 column 330 (char 329)
+- Ligne 8: JSONDecodeError - Expecting ',' delimiter: line 1 column 929 (char 928)
+- Ligne 9: JSONDecodeError - Expecting ',' delimiter: line 1 column 330 (char 329)
+- Ligne 10: JSONDecodeError - Expecting ',' delimiter: line 1 column 963 (char 962)
+- Ligne 11: JSONDecodeError - Expecting ',' delimiter: line 1 column 330 (char 329)
+- Ligne 12: JSONDecodeError - Expecting ',' delimiter: line 1 column 930 (char 929)
+- Ligne 13: JSONDecodeError - Expecting ',' delimiter: line 1 column 330 (char 329)
+- Ligne 14: JSONDecodeError - Expecting ',' delimiter: line 1 column 962 (char 961)
+- Ligne 15: JSONDecodeError - Expecting ',' delimiter: line 1 column 330 (char 329)
+- Ligne 16: JSONDecodeError - Expecting ',' delimiter: line 1 column 930 (char 929)
+- Ligne 17: JSONDecodeError - Expecting ',' delimiter: line 1 column 330 (char 329)
+- Ligne 18: JSONDecodeError - Expecting ',' delimiter: line 1 column 929 (char 928)
+- Ligne 19: JSONDecodeError - Expecting ',' delimiter: line 1 column 330 (char 329)
+- Ligne 20: JSONDecodeError - Expecting ',' delimiter: line 1 column 963 (char 962)

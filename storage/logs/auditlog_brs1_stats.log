@@ -1,0 +1,31 @@
+Bilan abis-logs-ingestor
+========================
+
+Fichier d'entrée : C:\Users\Abdoul\OneDrive\Desktop\demo\projets\abis_logs_ingestor\storage\inputs\auditlog_brs1.log
+Fichier JSON     : C:\Users\Abdoul\OneDrive\Desktop\demo\projets\abis_logs_ingestor\storage\json_data\auditlog_brs1.json
+
+Total lignes lues : 7511
+Événements parsés : 3709
+Lignes en échec   : 0
+
+Premières erreurs :
+- Ligne 18: JSONDecodeError - Expecting ',' delimiter: line 1 column 360 (char 359)
+- Ligne 19: JSONDecodeError - Expecting ',' delimiter: line 1 column 536 (char 535)
+- Ligne 20: JSONDecodeError - Expecting ',' delimiter: line 1 column 408 (char 407)
+- Ligne 35: JSONDecodeError - Expecting ',' delimiter: line 1 column 360 (char 359)
+- Ligne 36: JSONDecodeError - Expecting ',' delimiter: line 1 column 536 (char 535)
+- Ligne 37: JSONDecodeError - Expecting ',' delimiter: line 1 column 408 (char 407)
+- Ligne 39: JSONDecodeError - Expecting ',' delimiter: line 1 column 423 (char 422)
+- Ligne 40: JSONDecodeError - Expecting ',' delimiter: line 1 column 384 (char 383)
+- Ligne 41: JSONDecodeError - Expecting ',' delimiter: line 1 column 419 (char 418)
+- Ligne 42: JSONDecodeError - Expecting ',' delimiter: line 1 column 326 (char 325)
+- Ligne 44: JSONDecodeError - Expecting ',' delimiter: line 1 column 428 (char 427)
+- Ligne 45: JSONDecodeError - Expecting ',' delimiter: line 1 column 721 (char 720)
+- Ligne 46: JSONDecodeError - Expecting ',' delimiter: line 1 column 440 (char 439)
+- Ligne 47: JSONDecodeError - Expecting ',' delimiter: line 1 column 860 (char 859)
+- Ligne 48: JSONDecodeError - Expecting ',' delimiter: line 1 column 423 (char 422)
+- Ligne 49: JSONDecodeError - Expecting ',' delimiter: line 1 column 384 (char 383)
+- Ligne 50: JSONDecodeError - Expecting ',' delimiter: line 1 column 419 (char 418)
+- Ligne 51: JSONDecodeError - Expecting ',' delimiter: line 1 column 326 (char 325)
+- Ligne 53: JSONDecodeError - Expecting ',' delimiter: line 1 column 401 (char 400)
+- Ligne 54: JSONDecodeError - Expecting ',' delimiter: line 1 column 731 (char 730)

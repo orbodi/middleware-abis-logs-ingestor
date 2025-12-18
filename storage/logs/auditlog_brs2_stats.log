@@ -1,0 +1,31 @@
+Bilan abis-logs-ingestor
+========================
+
+Fichier d'entrée : C:\Users\Abdoul\OneDrive\Desktop\demo\projets\abis_logs_ingestor\storage\inputs\auditlog_brs2.log
+Fichier JSON     : C:\Users\Abdoul\OneDrive\Desktop\demo\projets\abis_logs_ingestor\storage\json_data\auditlog_brs2.json
+
+Total lignes lues : 7569
+Événements parsés : 3825
+Lignes en échec   : 0
+
+Premières erreurs :
+- Ligne 1: JSONDecodeError - Expecting ',' delimiter: line 1 column 400 (char 399)
+- Ligne 2: JSONDecodeError - Expecting ',' delimiter: line 1 column 731 (char 730)
+- Ligne 3: JSONDecodeError - Expecting ',' delimiter: line 1 column 374 (char 373)
+- Ligne 4: JSONDecodeError - Expecting ',' delimiter: line 1 column 324 (char 323)
+- Ligne 6: JSONDecodeError - Expecting ',' delimiter: line 1 column 423 (char 422)
+- Ligne 7: JSONDecodeError - Expecting ',' delimiter: line 1 column 384 (char 383)
+- Ligne 8: JSONDecodeError - Expecting ',' delimiter: line 1 column 419 (char 418)
+- Ligne 9: JSONDecodeError - Expecting ',' delimiter: line 1 column 326 (char 325)
+- Ligne 24: JSONDecodeError - Expecting ',' delimiter: line 1 column 360 (char 359)
+- Ligne 25: JSONDecodeError - Expecting ',' delimiter: line 1 column 536 (char 535)
+- Ligne 26: JSONDecodeError - Expecting ',' delimiter: line 1 column 408 (char 407)
+- Ligne 41: JSONDecodeError - Expecting ',' delimiter: line 1 column 360 (char 359)
+- Ligne 42: JSONDecodeError - Expecting ',' delimiter: line 1 column 536 (char 535)
+- Ligne 43: JSONDecodeError - Expecting ',' delimiter: line 1 column 408 (char 407)
+- Ligne 58: JSONDecodeError - Expecting ',' delimiter: line 1 column 360 (char 359)
+- Ligne 59: JSONDecodeError - Expecting ',' delimiter: line 1 column 536 (char 535)
+- Ligne 60: JSONDecodeError - Expecting ',' delimiter: line 1 column 408 (char 407)
+- Ligne 75: JSONDecodeError - Expecting ',' delimiter: line 1 column 360 (char 359)
+- Ligne 76: JSONDecodeError - Expecting ',' delimiter: line 1 column 536 (char 535)
+- Ligne 77: JSONDecodeError - Expecting ',' delimiter: line 1 column 408 (char 407)

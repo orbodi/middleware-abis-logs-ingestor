@@ -1,0 +1,1916 @@
+[
+  {
+    "_start_line": 1,
+    "_raw": "{ \"BUSINESS_ID\":\"ebd9e492-f986-44ac-a26e-f35d6e3437c1\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"6af8f2dc-4ecd-40d6-bca5-961613c3407b\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"START\",\"ACTIVITY_RESULT\":\"ACCEPTED\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:05:25.972Z\",\"DURATION\":0,\"REFERENCE_ID\":,\"mosip.version\":,\"REFERENCE_URL\":,\"OPERATION\":PUBLISH_RESPONSE_MESSAGE_TO_QUEUE,\"RETURN_VALUE\":1,\"ID\":mosip.manual.adjudication.adjudicate,\"REQUEST_ID\":ebd9e492-f986-44ac-a26e-f35d6e3437c1,\"REQUEST_TIME\":,\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 330 (char 329)",
+    "BUSINESS_ID": "ebd9e492-f986-44ac-a26e-f35d6e3437c1",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "6af8f2dc-4ecd-40d6-bca5-961613c3407b",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "START",
+    "ACTIVITY_RESULT": "ACCEPTED",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:05:25.972Z",
+    "DURATION": 0,
+    "OPERATION": "PUBLISH_RESPONSE_MESSAGE_TO_QUEUE",
+    "RETURN_VALUE": 1,
+    "ID": "mosip.manual.adjudication.adjudicate",
+    "REQUEST_ID": "ebd9e492-f986-44ac-a26e-f35d6e3437c1",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 2,
+    "_raw": "{ \"BUSINESS_ID\":\"ebd9e492-f986-44ac-a26e-f35d6e3437c1\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"6af8f2dc-4ecd-40d6-bca5-961613c3407b\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"END\",\"ACTIVITY_RESULT\":\"SUCCESS\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:05:25.983Z\",\"DURATION\":11,\"RESPONSE_TIME\":2025-11-10T08:05:25.983446956,\"RESPONSE_PUBLISHED_TO_MOSIP_QUEUE\":{\"id\":\"mosip.manual.adjudication.adjudicate\",\"requestId\":\"ebd9e492-f986-44ac-a26e-f35d6e3437c1\",\"returnValue\":\"1\",\"responsetime\":\"2025-11-10T08:05:25.972558193Z\",\"candidateList\":{\"count\":\"0\",\"candidates\":[]},\"analytics\":{\"candidates\":[{\"referenceId\":\"17249107380039420250827094540\",\"analytics\":{\"internalScore\":\"11523.0\",\"rank\":\"1\",\"adjudicationDetails\":[{\"decision\":\"NO_HIT\",\"biometricDetails\":[{\"biometricType\":\"FACE\",\"operatorComment\":\"Demandeur | ID - 17249107370039620250831100349\\nCandidat | ID - 17249107380039420250827094540\\n\\nLes portraits sont différents [NO_HIT] - 1_jean-eudes_tchoou\"},{\"biometricType\":\"FINGER\",\"operatorComment\":\"Les empreintes sont identiques [NO_HIT] - 1_jean-eudes_tchoou\"},{\"biometricType\":\"IRIS\",\"operatorComment\":\"Les iris sont différents [NO_HIT] - 1_jean-eudes_tchoou\"}],\"biographicComment\":\"Il s'agit d'un mineur et de son tuteur / représentant légal [NO_HIT] - 1_jean-eudes_tchoou\",\"operator\":\"1_jean-eudes_tchoou\"}]},\"modalities\":[{\"biometricType\":\"IIR\",\"analytics\":{\"internalScore\":\"2138.0\"}},{\"biometricType\":\"FMR\",\"analytics\":{\"internalScore\":\"3589.0\"}},{\"biometricType\":\"FIR\",\"analytics\":{\"internalScore\":\"11761.0\"}}]}]}},\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 963 (char 962)",
+    "RESPONSE_PUBLISHED_TO_MOSIP_QUEUE": {
+      "id": "mosip.manual.adjudication.adjudicate",
+      "requestId": "ebd9e492-f986-44ac-a26e-f35d6e3437c1",
+      "returnValue": "1",
+      "responsetime": "2025-11-10T08:05:25.972558193Z",
+      "candidateList": {
+        "count": "0",
+        "candidates": []
+      },
+      "analytics": {
+        "candidates": [
+          {
+            "referenceId": "17249107380039420250827094540",
+            "analytics": {
+              "internalScore": "11523.0",
+              "rank": "1",
+              "adjudicationDetails": [
+                {
+                  "decision": "NO_HIT",
+                  "biometricDetails": [
+                    {
+                      "biometricType": "FACE",
+                      "operatorComment": "Demandeur | ID - 17249107370039620250831100349\nCandidat | ID - 17249107380039420250827094540\n\nLes portraits sont différents [NO_HIT] - 1_jean-eudes_tchoou"
+                    },
+                    {
+                      "biometricType": "FINGER",
+                      "operatorComment": "Les empreintes sont identiques [NO_HIT] - 1_jean-eudes_tchoou"
+                    },
+                    {
+                      "biometricType": "IRIS",
+                      "operatorComment": "Les iris sont différents [NO_HIT] - 1_jean-eudes_tchoou"
+                    }
+                  ],
+                  "biographicComment": "Il s'agit d'un mineur et de son tuteur / représentant légal [NO_HIT] - 1_jean-eudes_tchoou",
+                  "operator": "1_jean-eudes_tchoou"
+                }
+              ]
+            },
+            "modalities": [
+              {
+                "biometricType": "IIR",
+                "analytics": {
+                  "internalScore": "2138.0"
+                }
+              },
+              {
+                "biometricType": "FMR",
+                "analytics": {
+                  "internalScore": "3589.0"
+                }
+              },
+              {
+                "biometricType": "FIR",
+                "analytics": {
+                  "internalScore": "11761.0"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "BUSINESS_ID": "ebd9e492-f986-44ac-a26e-f35d6e3437c1",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "6af8f2dc-4ecd-40d6-bca5-961613c3407b",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "END",
+    "ACTIVITY_RESULT": "SUCCESS",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:05:25.983Z",
+    "DURATION": 11,
+    "RESPONSE_TIME": "2025-11-10T08:05:25.983446956",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 3,
+    "_raw": "{ \"BUSINESS_ID\":\"5b4bef7f-35e1-4c20-8dab-de656742e794\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"068ff1b9-fc75-4d8b-9c7b-2ffde2cbb989\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"START\",\"ACTIVITY_RESULT\":\"ACCEPTED\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:07:54.519Z\",\"DURATION\":0,\"REFERENCE_ID\":,\"mosip.version\":,\"REFERENCE_URL\":,\"OPERATION\":PUBLISH_RESPONSE_MESSAGE_TO_QUEUE,\"RETURN_VALUE\":1,\"ID\":mosip.manual.adjudication.adjudicate,\"REQUEST_ID\":5b4bef7f-35e1-4c20-8dab-de656742e794,\"REQUEST_TIME\":,\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 330 (char 329)",
+    "BUSINESS_ID": "5b4bef7f-35e1-4c20-8dab-de656742e794",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "068ff1b9-fc75-4d8b-9c7b-2ffde2cbb989",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "START",
+    "ACTIVITY_RESULT": "ACCEPTED",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:07:54.519Z",
+    "DURATION": 0,
+    "OPERATION": "PUBLISH_RESPONSE_MESSAGE_TO_QUEUE",
+    "RETURN_VALUE": 1,
+    "ID": "mosip.manual.adjudication.adjudicate",
+    "REQUEST_ID": "5b4bef7f-35e1-4c20-8dab-de656742e794",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 4,
+    "_raw": "{ \"BUSINESS_ID\":\"5b4bef7f-35e1-4c20-8dab-de656742e794\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"068ff1b9-fc75-4d8b-9c7b-2ffde2cbb989\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"END\",\"ACTIVITY_RESULT\":\"SUCCESS\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:07:54.527Z\",\"DURATION\":8,\"RESPONSE_TIME\":2025-11-10T08:07:54.527920852,\"RESPONSE_PUBLISHED_TO_MOSIP_QUEUE\":{\"id\":\"mosip.manual.adjudication.adjudicate\",\"requestId\":\"5b4bef7f-35e1-4c20-8dab-de656742e794\",\"returnValue\":\"1\",\"responsetime\":\"2025-11-10T08:07:54.519241329Z\",\"candidateList\":{\"count\":\"0\",\"candidates\":[]},\"analytics\":{\"candidates\":[{\"referenceId\":\"17237111040010220250822142229\",\"analytics\":{\"internalScore\":\"16174.0\",\"rank\":\"1\",\"adjudicationDetails\":[{\"decision\":\"NO_HIT\",\"biometricDetails\":[{\"biometricType\":\"FACE\",\"operatorComment\":\"Demandeur | ID - 17237100540063420250830120038\\nCandidat | ID - 17237111040010220250822142229\\n\\n\\nLes portraits sont différents [NO_HIT] - 1_jean-eudes_tchoou\"},{\"biometricType\":\"FINGER\",\"operatorComment\":\"Les empreintes sont différentes [NO_HIT] - 1_jean-eudes_tchoou\"},{\"biometricType\":\"IRIS\",\"operatorComment\":\"Les iris sont identiques [NO_HIT] - 1_jean-eudes_tchoou\"}],\"biographicComment\":\"Il s'agit d'un mineur et de son tuteur / représentant légal [NO_HIT] - 1_jean-eudes_tchoou\",\"operator\":\"1_jean-eudes_tchoou\"}]},\"modalities\":[{\"biometricType\":\"IIR\",\"analytics\":{\"internalScore\":\"16412.0\"}},{\"biometricType\":\"FMR\",\"analytics\":{\"internalScore\":\"2408.0\"}},{\"biometricType\":\"FIR\",\"analytics\":{\"internalScore\":\"1112.0\"}}]}]}},\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 964 (char 963)",
+    "RESPONSE_PUBLISHED_TO_MOSIP_QUEUE": {
+      "id": "mosip.manual.adjudication.adjudicate",
+      "requestId": "5b4bef7f-35e1-4c20-8dab-de656742e794",
+      "returnValue": "1",
+      "responsetime": "2025-11-10T08:07:54.519241329Z",
+      "candidateList": {
+        "count": "0",
+        "candidates": []
+      },
+      "analytics": {
+        "candidates": [
+          {
+            "referenceId": "17237111040010220250822142229",
+            "analytics": {
+              "internalScore": "16174.0",
+              "rank": "1",
+              "adjudicationDetails": [
+                {
+                  "decision": "NO_HIT",
+                  "biometricDetails": [
+                    {
+                      "biometricType": "FACE",
+                      "operatorComment": "Demandeur | ID - 17237100540063420250830120038\nCandidat | ID - 17237111040010220250822142229\n\n\nLes portraits sont différents [NO_HIT] - 1_jean-eudes_tchoou"
+                    },
+                    {
+                      "biometricType": "FINGER",
+                      "operatorComment": "Les empreintes sont différentes [NO_HIT] - 1_jean-eudes_tchoou"
+                    },
+                    {
+                      "biometricType": "IRIS",
+                      "operatorComment": "Les iris sont identiques [NO_HIT] - 1_jean-eudes_tchoou"
+                    }
+                  ],
+                  "biographicComment": "Il s'agit d'un mineur et de son tuteur / représentant légal [NO_HIT] - 1_jean-eudes_tchoou",
+                  "operator": "1_jean-eudes_tchoou"
+                }
+              ]
+            },
+            "modalities": [
+              {
+                "biometricType": "IIR",
+                "analytics": {
+                  "internalScore": "16412.0"
+                }
+              },
+              {
+                "biometricType": "FMR",
+                "analytics": {
+                  "internalScore": "2408.0"
+                }
+              },
+              {
+                "biometricType": "FIR",
+                "analytics": {
+                  "internalScore": "1112.0"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "BUSINESS_ID": "5b4bef7f-35e1-4c20-8dab-de656742e794",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "068ff1b9-fc75-4d8b-9c7b-2ffde2cbb989",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "END",
+    "ACTIVITY_RESULT": "SUCCESS",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:07:54.527Z",
+    "DURATION": 8,
+    "RESPONSE_TIME": "2025-11-10T08:07:54.527920852",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 5,
+    "_raw": "{ \"BUSINESS_ID\":\"5ee805a1-c8cf-4ff9-8659-9bec7e9b74cc\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"513cb95f-06bb-44ad-beef-883dc4ee24cd\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"START\",\"ACTIVITY_RESULT\":\"ACCEPTED\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:22:21.532Z\",\"DURATION\":0,\"REFERENCE_ID\":,\"mosip.version\":,\"REFERENCE_URL\":,\"OPERATION\":PUBLISH_RESPONSE_MESSAGE_TO_QUEUE,\"RETURN_VALUE\":1,\"ID\":mosip.manual.adjudication.adjudicate,\"REQUEST_ID\":5ee805a1-c8cf-4ff9-8659-9bec7e9b74cc,\"REQUEST_TIME\":,\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 330 (char 329)",
+    "BUSINESS_ID": "5ee805a1-c8cf-4ff9-8659-9bec7e9b74cc",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "513cb95f-06bb-44ad-beef-883dc4ee24cd",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "START",
+    "ACTIVITY_RESULT": "ACCEPTED",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:22:21.532Z",
+    "DURATION": 0,
+    "OPERATION": "PUBLISH_RESPONSE_MESSAGE_TO_QUEUE",
+    "RETURN_VALUE": 1,
+    "ID": "mosip.manual.adjudication.adjudicate",
+    "REQUEST_ID": "5ee805a1-c8cf-4ff9-8659-9bec7e9b74cc",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 6,
+    "_raw": "{ \"BUSINESS_ID\":\"5ee805a1-c8cf-4ff9-8659-9bec7e9b74cc\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"513cb95f-06bb-44ad-beef-883dc4ee24cd\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"END\",\"ACTIVITY_RESULT\":\"SUCCESS\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:22:21.545Z\",\"DURATION\":13,\"RESPONSE_TIME\":2025-11-10T08:22:21.545650519,\"RESPONSE_PUBLISHED_TO_MOSIP_QUEUE\":{\"id\":\"mosip.manual.adjudication.adjudicate\",\"requestId\":\"5ee805a1-c8cf-4ff9-8659-9bec7e9b74cc\",\"returnValue\":\"1\",\"responsetime\":\"2025-11-10T08:22:21.532675011Z\",\"candidateList\":{\"count\":\"0\",\"candidates\":[]},\"analytics\":{\"candidates\":[{\"referenceId\":\"17467112050023320250825141445\",\"analytics\":{\"internalScore\":\"11799.0\",\"rank\":\"1\",\"adjudicationDetails\":[{\"decision\":\"NO_HIT\",\"biometricDetails\":[{\"biometricType\":\"FACE\",\"operatorComment\":\"Demandeur | ID - 17467101270096120250903154317\\nCandidat | ID - 17467112050023320250825141445\\n\\nLes portraits sont différents [NO_HIT] - 1_richard_poyodi\"},{\"biometricType\":\"FINGER\",\"operatorComment\":\"Les empreintes sont identiques [NO_HIT] - 1_richard_poyodi\"},{\"biometricType\":\"IRIS\",\"operatorComment\":\"Les iris sont identiques [NO_HIT] - 1_richard_poyodi\"}],\"biographicComment\":\"Les données démographiques sont différentes.\\nIl s'agit d'un parent et de son enfant. [NO_HIT] - 1_richard_poyodi\",\"operator\":\"1_richard_poyodi\"}]},\"modalities\":[{\"biometricType\":\"IIR\",\"analytics\":{\"internalScore\":\"10899.0\"}},{\"biometricType\":\"FMR\",\"analytics\":{\"internalScore\":\"2943.0\"}},{\"biometricType\":\"FIR\",\"analytics\":{\"internalScore\":\"12037.0\"}}]}]}},\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 963 (char 962)",
+    "RESPONSE_PUBLISHED_TO_MOSIP_QUEUE": {
+      "id": "mosip.manual.adjudication.adjudicate",
+      "requestId": "5ee805a1-c8cf-4ff9-8659-9bec7e9b74cc",
+      "returnValue": "1",
+      "responsetime": "2025-11-10T08:22:21.532675011Z",
+      "candidateList": {
+        "count": "0",
+        "candidates": []
+      },
+      "analytics": {
+        "candidates": [
+          {
+            "referenceId": "17467112050023320250825141445",
+            "analytics": {
+              "internalScore": "11799.0",
+              "rank": "1",
+              "adjudicationDetails": [
+                {
+                  "decision": "NO_HIT",
+                  "biometricDetails": [
+                    {
+                      "biometricType": "FACE",
+                      "operatorComment": "Demandeur | ID - 17467101270096120250903154317\nCandidat | ID - 17467112050023320250825141445\n\nLes portraits sont différents [NO_HIT] - 1_richard_poyodi"
+                    },
+                    {
+                      "biometricType": "FINGER",
+                      "operatorComment": "Les empreintes sont identiques [NO_HIT] - 1_richard_poyodi"
+                    },
+                    {
+                      "biometricType": "IRIS",
+                      "operatorComment": "Les iris sont identiques [NO_HIT] - 1_richard_poyodi"
+                    }
+                  ],
+                  "biographicComment": "Les données démographiques sont différentes.\nIl s'agit d'un parent et de son enfant. [NO_HIT] - 1_richard_poyodi",
+                  "operator": "1_richard_poyodi"
+                }
+              ]
+            },
+            "modalities": [
+              {
+                "biometricType": "IIR",
+                "analytics": {
+                  "internalScore": "10899.0"
+                }
+              },
+              {
+                "biometricType": "FMR",
+                "analytics": {
+                  "internalScore": "2943.0"
+                }
+              },
+              {
+                "biometricType": "FIR",
+                "analytics": {
+                  "internalScore": "12037.0"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "BUSINESS_ID": "5ee805a1-c8cf-4ff9-8659-9bec7e9b74cc",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "513cb95f-06bb-44ad-beef-883dc4ee24cd",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "END",
+    "ACTIVITY_RESULT": "SUCCESS",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:22:21.545Z",
+    "DURATION": 13,
+    "RESPONSE_TIME": "2025-11-10T08:22:21.545650519",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 7,
+    "_raw": "{ \"BUSINESS_ID\":\"f2110494-2a71-45b8-92fa-529a36207844\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"2234895b-4e73-4c4a-a534-807459907b80\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"START\",\"ACTIVITY_RESULT\":\"ACCEPTED\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:29:36.104Z\",\"DURATION\":0,\"REFERENCE_ID\":,\"mosip.version\":,\"REFERENCE_URL\":,\"OPERATION\":PUBLISH_RESPONSE_MESSAGE_TO_QUEUE,\"RETURN_VALUE\":1,\"ID\":mosip.manual.adjudication.adjudicate,\"REQUEST_ID\":f2110494-2a71-45b8-92fa-529a36207844,\"REQUEST_TIME\":,\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 330 (char 329)",
+    "BUSINESS_ID": "f2110494-2a71-45b8-92fa-529a36207844",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "2234895b-4e73-4c4a-a534-807459907b80",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "START",
+    "ACTIVITY_RESULT": "ACCEPTED",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:29:36.104Z",
+    "DURATION": 0,
+    "OPERATION": "PUBLISH_RESPONSE_MESSAGE_TO_QUEUE",
+    "RETURN_VALUE": 1,
+    "ID": "mosip.manual.adjudication.adjudicate",
+    "REQUEST_ID": "f2110494-2a71-45b8-92fa-529a36207844",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 8,
+    "_raw": "{ \"BUSINESS_ID\":\"f2110494-2a71-45b8-92fa-529a36207844\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"2234895b-4e73-4c4a-a534-807459907b80\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"END\",\"ACTIVITY_RESULT\":\"SUCCESS\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:29:36.113Z\",\"DURATION\":9,\"RESPONSE_TIME\":2025-11-10T08:29:36.113156508,\"RESPONSE_PUBLISHED_TO_MOSIP_QUEUE\":{\"id\":\"mosip.manual.adjudication.adjudicate\",\"requestId\":\"f2110494-2a71-45b8-92fa-529a36207844\",\"returnValue\":\"1\",\"responsetime\":\"2025-11-10T08:29:36.103936215Z\",\"candidateList\":{\"count\":\"1\",\"candidates\":[{\"referenceId\":\"17113113660037720250613134853\",\"analytics\":{\"internalScore\":\"14644.0\",\"rank\":\"1\",\"adjudicationDetails\":[{\"decision\":\"HIT\",\"biometricDetails\":[{\"biometricType\":\"FACE\",\"operatorComment\":\"Demandeur | ID - 17249107370040720250831134602\\nCandidat | ID - 17113113660037720250613134853\\n\\nLes portraits sont identiques [HIT] - 1_richard_poyodi\"},{\"biometricType\":\"FINGER\",\"operatorComment\":\"Les empreintes sont identiques [HIT] - 1_richard_poyodi\"},{\"biometricType\":\"IRIS\",\"operatorComment\":\"Les iris sont différents [HIT] - 1_richard_poyodi\"}],\"biographicComment\":\"Les données démographiques sont identiques bien que le système signale une discordance de nom et de prénom.\\nAction :\\nN/A [HIT] - 1_richard_poyodi\",\"operator\":\"1_richard_poyodi\"}]},\"modalities\":[{\"biometricType\":\"IIR\",\"analytics\":{\"internalScore\":\"2413.0\"}},{\"biometricType\":\"FMR\",\"analytics\":{\"internalScore\":\"9854.0\"}},{\"biometricType\":\"FIR\",\"analytics\":{\"internalScore\":\"14882.0\"}}]}]},\"analytics\":{\"candidates\":[]}},\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 929 (char 928)",
+    "RESPONSE_PUBLISHED_TO_MOSIP_QUEUE": {
+      "id": "mosip.manual.adjudication.adjudicate",
+      "requestId": "f2110494-2a71-45b8-92fa-529a36207844",
+      "returnValue": "1",
+      "responsetime": "2025-11-10T08:29:36.103936215Z",
+      "candidateList": {
+        "count": "1",
+        "candidates": [
+          {
+            "referenceId": "17113113660037720250613134853",
+            "analytics": {
+              "internalScore": "14644.0",
+              "rank": "1",
+              "adjudicationDetails": [
+                {
+                  "decision": "HIT",
+                  "biometricDetails": [
+                    {
+                      "biometricType": "FACE",
+                      "operatorComment": "Demandeur | ID - 17249107370040720250831134602\nCandidat | ID - 17113113660037720250613134853\n\nLes portraits sont identiques [HIT] - 1_richard_poyodi"
+                    },
+                    {
+                      "biometricType": "FINGER",
+                      "operatorComment": "Les empreintes sont identiques [HIT] - 1_richard_poyodi"
+                    },
+                    {
+                      "biometricType": "IRIS",
+                      "operatorComment": "Les iris sont différents [HIT] - 1_richard_poyodi"
+                    }
+                  ],
+                  "biographicComment": "Les données démographiques sont identiques bien que le système signale une discordance de nom et de prénom.\nAction :\nN/A [HIT] - 1_richard_poyodi",
+                  "operator": "1_richard_poyodi"
+                }
+              ]
+            },
+            "modalities": [
+              {
+                "biometricType": "IIR",
+                "analytics": {
+                  "internalScore": "2413.0"
+                }
+              },
+              {
+                "biometricType": "FMR",
+                "analytics": {
+                  "internalScore": "9854.0"
+                }
+              },
+              {
+                "biometricType": "FIR",
+                "analytics": {
+                  "internalScore": "14882.0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "analytics": {
+        "candidates": []
+      }
+    },
+    "BUSINESS_ID": "f2110494-2a71-45b8-92fa-529a36207844",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "2234895b-4e73-4c4a-a534-807459907b80",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "END",
+    "ACTIVITY_RESULT": "SUCCESS",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:29:36.113Z",
+    "DURATION": 9,
+    "RESPONSE_TIME": "2025-11-10T08:29:36.113156508",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 9,
+    "_raw": "{ \"BUSINESS_ID\":\"3dc7704a-ab82-4d1b-95be-de1c5596b6b8\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"ca0e8f6c-d62c-4336-804f-054ad498b6d8\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"START\",\"ACTIVITY_RESULT\":\"ACCEPTED\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:33:50.461Z\",\"DURATION\":0,\"REFERENCE_ID\":,\"mosip.version\":,\"REFERENCE_URL\":,\"OPERATION\":PUBLISH_RESPONSE_MESSAGE_TO_QUEUE,\"RETURN_VALUE\":1,\"ID\":mosip.manual.adjudication.adjudicate,\"REQUEST_ID\":3dc7704a-ab82-4d1b-95be-de1c5596b6b8,\"REQUEST_TIME\":,\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 330 (char 329)",
+    "BUSINESS_ID": "3dc7704a-ab82-4d1b-95be-de1c5596b6b8",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "ca0e8f6c-d62c-4336-804f-054ad498b6d8",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "START",
+    "ACTIVITY_RESULT": "ACCEPTED",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:33:50.461Z",
+    "DURATION": 0,
+    "OPERATION": "PUBLISH_RESPONSE_MESSAGE_TO_QUEUE",
+    "RETURN_VALUE": 1,
+    "ID": "mosip.manual.adjudication.adjudicate",
+    "REQUEST_ID": "3dc7704a-ab82-4d1b-95be-de1c5596b6b8",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 10,
+    "_raw": "{ \"BUSINESS_ID\":\"3dc7704a-ab82-4d1b-95be-de1c5596b6b8\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"ca0e8f6c-d62c-4336-804f-054ad498b6d8\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"END\",\"ACTIVITY_RESULT\":\"SUCCESS\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:33:50.487Z\",\"DURATION\":26,\"RESPONSE_TIME\":2025-11-10T08:33:50.487605480,\"RESPONSE_PUBLISHED_TO_MOSIP_QUEUE\":{\"id\":\"mosip.manual.adjudication.adjudicate\",\"requestId\":\"3dc7704a-ab82-4d1b-95be-de1c5596b6b8\",\"returnValue\":\"1\",\"responsetime\":\"2025-11-10T08:33:50.461325149Z\",\"candidateList\":{\"count\":\"0\",\"candidates\":[]},\"analytics\":{\"candidates\":[{\"referenceId\":\"17260107320045520250825153328\",\"analytics\":{\"internalScore\":\"14068.0\",\"rank\":\"1\",\"adjudicationDetails\":[{\"decision\":\"NO_HIT\",\"biometricDetails\":[{\"biometricType\":\"FACE\",\"operatorComment\":\"Demandeur | ID - 17260107320097320250901134820\\nCandidat | ID - 17260107320045520250825153328\\n\\nLes portraits sont différents [NO_HIT] - 1_richard_poyodi\"},{\"biometricType\":\"FINGER\",\"operatorComment\":\"Les empreintes sont identiques [NO_HIT] - 1_richard_poyodi\"},{\"biometricType\":\"IRIS\",\"operatorComment\":\"Les iris sont différents [NO_HIT] - 1_richard_poyodi\"}],\"biographicComment\":\"Les données démographiques sont différentes.\\nIl s'agit d'un mineur et de son tuteur / représentant légal [NO_HIT] - 1_richard_poyodi\",\"operator\":\"1_richard_poyodi\"}]},\"modalities\":[{\"biometricType\":\"IIR\",\"analytics\":{\"internalScore\":\"1973.0\"}},{\"biometricType\":\"FMR\",\"analytics\":{\"internalScore\":\"2839.0\"}},{\"biometricType\":\"FIR\",\"analytics\":{\"internalScore\":\"14306.0\"}}]}]}},\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 963 (char 962)",
+    "RESPONSE_PUBLISHED_TO_MOSIP_QUEUE": {
+      "id": "mosip.manual.adjudication.adjudicate",
+      "requestId": "3dc7704a-ab82-4d1b-95be-de1c5596b6b8",
+      "returnValue": "1",
+      "responsetime": "2025-11-10T08:33:50.461325149Z",
+      "candidateList": {
+        "count": "0",
+        "candidates": []
+      },
+      "analytics": {
+        "candidates": [
+          {
+            "referenceId": "17260107320045520250825153328",
+            "analytics": {
+              "internalScore": "14068.0",
+              "rank": "1",
+              "adjudicationDetails": [
+                {
+                  "decision": "NO_HIT",
+                  "biometricDetails": [
+                    {
+                      "biometricType": "FACE",
+                      "operatorComment": "Demandeur | ID - 17260107320097320250901134820\nCandidat | ID - 17260107320045520250825153328\n\nLes portraits sont différents [NO_HIT] - 1_richard_poyodi"
+                    },
+                    {
+                      "biometricType": "FINGER",
+                      "operatorComment": "Les empreintes sont identiques [NO_HIT] - 1_richard_poyodi"
+                    },
+                    {
+                      "biometricType": "IRIS",
+                      "operatorComment": "Les iris sont différents [NO_HIT] - 1_richard_poyodi"
+                    }
+                  ],
+                  "biographicComment": "Les données démographiques sont différentes.\nIl s'agit d'un mineur et de son tuteur / représentant légal [NO_HIT] - 1_richard_poyodi",
+                  "operator": "1_richard_poyodi"
+                }
+              ]
+            },
+            "modalities": [
+              {
+                "biometricType": "IIR",
+                "analytics": {
+                  "internalScore": "1973.0"
+                }
+              },
+              {
+                "biometricType": "FMR",
+                "analytics": {
+                  "internalScore": "2839.0"
+                }
+              },
+              {
+                "biometricType": "FIR",
+                "analytics": {
+                  "internalScore": "14306.0"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "BUSINESS_ID": "3dc7704a-ab82-4d1b-95be-de1c5596b6b8",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "ca0e8f6c-d62c-4336-804f-054ad498b6d8",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "END",
+    "ACTIVITY_RESULT": "SUCCESS",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:33:50.487Z",
+    "DURATION": 26,
+    "RESPONSE_TIME": "2025-11-10T08:33:50.487605480",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 11,
+    "_raw": "{ \"BUSINESS_ID\":\"1b4dcdae-430e-4e24-b00c-4d2d34e96bc4\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"a97dba8c-fe92-41c8-bb38-60e4e7c14b68\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"START\",\"ACTIVITY_RESULT\":\"ACCEPTED\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:34:23.097Z\",\"DURATION\":0,\"REFERENCE_ID\":,\"mosip.version\":,\"REFERENCE_URL\":,\"OPERATION\":PUBLISH_RESPONSE_MESSAGE_TO_QUEUE,\"RETURN_VALUE\":1,\"ID\":mosip.manual.adjudication.adjudicate,\"REQUEST_ID\":1b4dcdae-430e-4e24-b00c-4d2d34e96bc4,\"REQUEST_TIME\":,\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 330 (char 329)",
+    "BUSINESS_ID": "1b4dcdae-430e-4e24-b00c-4d2d34e96bc4",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "a97dba8c-fe92-41c8-bb38-60e4e7c14b68",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "START",
+    "ACTIVITY_RESULT": "ACCEPTED",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:34:23.097Z",
+    "DURATION": 0,
+    "OPERATION": "PUBLISH_RESPONSE_MESSAGE_TO_QUEUE",
+    "RETURN_VALUE": 1,
+    "ID": "mosip.manual.adjudication.adjudicate",
+    "REQUEST_ID": "1b4dcdae-430e-4e24-b00c-4d2d34e96bc4",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 12,
+    "_raw": "{ \"BUSINESS_ID\":\"1b4dcdae-430e-4e24-b00c-4d2d34e96bc4\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"a97dba8c-fe92-41c8-bb38-60e4e7c14b68\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"END\",\"ACTIVITY_RESULT\":\"SUCCESS\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:34:23.156Z\",\"DURATION\":59,\"RESPONSE_TIME\":2025-11-10T08:34:23.156659233,\"RESPONSE_PUBLISHED_TO_MOSIP_QUEUE\":{\"id\":\"mosip.manual.adjudication.adjudicate\",\"requestId\":\"1b4dcdae-430e-4e24-b00c-4d2d34e96bc4\",\"returnValue\":\"1\",\"responsetime\":\"2025-11-10T08:34:23.096855259Z\",\"candidateList\":{\"count\":\"1\",\"candidates\":[{\"referenceId\":\"12747101070231720240329093742\",\"analytics\":{\"internalScore\":\"19432.0\",\"rank\":\"1\",\"adjudicationDetails\":[{\"decision\":\"HIT\",\"biometricDetails\":[{\"biometricType\":\"FACE\",\"operatorComment\":\"Demandeur | ID - 17293106210056020250831100035\\nCandidat | ID - 12747101070231720240329093742\\n\\nLes portraits sont identiques [HIT] - 1_jean-eudes_tchoou\"},{\"biometricType\":\"FINGER\",\"operatorComment\":\"Les empreintes sont identiques [HIT] - 1_jean-eudes_tchoou\"},{\"biometricType\":\"IRIS\",\"operatorComment\":\"Les iris sont identiques [HIT] - 1_jean-eudes_tchoou\"}],\"biographicComment\":\"Les données démographiques sont identiques bien qu'une discordance.\\nil s'agit de la même personne\\nAction:\\nN/A [HIT] - 1_jean-eudes_tchoou\",\"operator\":\"1_jean-eudes_tchoou\"}]},\"modalities\":[{\"biometricType\":\"IIR\",\"analytics\":{\"internalScore\":\"17770.0\"}},{\"biometricType\":\"FMR\",\"analytics\":{\"internalScore\":\"10854.0\"}},{\"biometricType\":\"FIR\",\"analytics\":{\"internalScore\":\"19670.0\"}}]}]},\"analytics\":{\"candidates\":[]}},\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 930 (char 929)",
+    "RESPONSE_PUBLISHED_TO_MOSIP_QUEUE": {
+      "id": "mosip.manual.adjudication.adjudicate",
+      "requestId": "1b4dcdae-430e-4e24-b00c-4d2d34e96bc4",
+      "returnValue": "1",
+      "responsetime": "2025-11-10T08:34:23.096855259Z",
+      "candidateList": {
+        "count": "1",
+        "candidates": [
+          {
+            "referenceId": "12747101070231720240329093742",
+            "analytics": {
+              "internalScore": "19432.0",
+              "rank": "1",
+              "adjudicationDetails": [
+                {
+                  "decision": "HIT",
+                  "biometricDetails": [
+                    {
+                      "biometricType": "FACE",
+                      "operatorComment": "Demandeur | ID - 17293106210056020250831100035\nCandidat | ID - 12747101070231720240329093742\n\nLes portraits sont identiques [HIT] - 1_jean-eudes_tchoou"
+                    },
+                    {
+                      "biometricType": "FINGER",
+                      "operatorComment": "Les empreintes sont identiques [HIT] - 1_jean-eudes_tchoou"
+                    },
+                    {
+                      "biometricType": "IRIS",
+                      "operatorComment": "Les iris sont identiques [HIT] - 1_jean-eudes_tchoou"
+                    }
+                  ],
+                  "biographicComment": "Les données démographiques sont identiques bien qu'une discordance.\nil s'agit de la même personne\nAction:\nN/A [HIT] - 1_jean-eudes_tchoou",
+                  "operator": "1_jean-eudes_tchoou"
+                }
+              ]
+            },
+            "modalities": [
+              {
+                "biometricType": "IIR",
+                "analytics": {
+                  "internalScore": "17770.0"
+                }
+              },
+              {
+                "biometricType": "FMR",
+                "analytics": {
+                  "internalScore": "10854.0"
+                }
+              },
+              {
+                "biometricType": "FIR",
+                "analytics": {
+                  "internalScore": "19670.0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "analytics": {
+        "candidates": []
+      }
+    },
+    "BUSINESS_ID": "1b4dcdae-430e-4e24-b00c-4d2d34e96bc4",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "a97dba8c-fe92-41c8-bb38-60e4e7c14b68",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "END",
+    "ACTIVITY_RESULT": "SUCCESS",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:34:23.156Z",
+    "DURATION": 59,
+    "RESPONSE_TIME": "2025-11-10T08:34:23.156659233",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 13,
+    "_raw": "{ \"BUSINESS_ID\":\"eaaa8298-597d-4958-bd5c-f03b48dc9321\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"305d6b00-dd09-4ccf-8188-264f222ddfa0\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"START\",\"ACTIVITY_RESULT\":\"ACCEPTED\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:35:48.946Z\",\"DURATION\":0,\"REFERENCE_ID\":,\"mosip.version\":,\"REFERENCE_URL\":,\"OPERATION\":PUBLISH_RESPONSE_MESSAGE_TO_QUEUE,\"RETURN_VALUE\":1,\"ID\":mosip.manual.adjudication.adjudicate,\"REQUEST_ID\":eaaa8298-597d-4958-bd5c-f03b48dc9321,\"REQUEST_TIME\":,\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 330 (char 329)",
+    "BUSINESS_ID": "eaaa8298-597d-4958-bd5c-f03b48dc9321",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "305d6b00-dd09-4ccf-8188-264f222ddfa0",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "START",
+    "ACTIVITY_RESULT": "ACCEPTED",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:35:48.946Z",
+    "DURATION": 0,
+    "OPERATION": "PUBLISH_RESPONSE_MESSAGE_TO_QUEUE",
+    "RETURN_VALUE": 1,
+    "ID": "mosip.manual.adjudication.adjudicate",
+    "REQUEST_ID": "eaaa8298-597d-4958-bd5c-f03b48dc9321",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 14,
+    "_raw": "{ \"BUSINESS_ID\":\"eaaa8298-597d-4958-bd5c-f03b48dc9321\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"305d6b00-dd09-4ccf-8188-264f222ddfa0\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"END\",\"ACTIVITY_RESULT\":\"SUCCESS\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:35:48.957Z\",\"DURATION\":11,\"RESPONSE_TIME\":2025-11-10T08:35:48.957296856,\"RESPONSE_PUBLISHED_TO_MOSIP_QUEUE\":{\"id\":\"mosip.manual.adjudication.adjudicate\",\"requestId\":\"eaaa8298-597d-4958-bd5c-f03b48dc9321\",\"returnValue\":\"1\",\"responsetime\":\"2025-11-10T08:35:48.946282206Z\",\"candidateList\":{\"count\":\"0\",\"candidates\":[]},\"analytics\":{\"candidates\":[{\"referenceId\":\"17265110890004320250821115902\",\"analytics\":{\"internalScore\":\"8242.0\",\"rank\":\"1\",\"adjudicationDetails\":[{\"decision\":\"NO_HIT\",\"biometricDetails\":[{\"biometricType\":\"FACE\",\"operatorComment\":\"Demandeur | ID - 17265110890071220250901112123\\nCandidat | ID - 17265110890004320250821115902\\n\\nLes portraits sont différents [NO_HIT] - 1_richard_poyodi\"},{\"biometricType\":\"FINGER\",\"operatorComment\":\"Les empreintes sont différentes [NO_HIT] - 1_richard_poyodi\"},{\"biometricType\":\"IRIS\",\"operatorComment\":\"Les iris sont identiques [NO_HIT] - 1_richard_poyodi\"}],\"biographicComment\":\"Les données démographiques sont différentes.\\nIl s'agit d'un parent et de son enfant. [NO_HIT] - 1_richard_poyodi\",\"operator\":\"1_richard_poyodi\"}]},\"modalities\":[{\"biometricType\":\"IIR\",\"analytics\":{\"internalScore\":\"8480.0\"}},{\"biometricType\":\"FMR\",\"analytics\":{\"internalScore\":\"2136.0\"}},{\"biometricType\":\"FIR\",\"analytics\":{\"internalScore\":\"903.0\"}}]}]}},\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 962 (char 961)",
+    "RESPONSE_PUBLISHED_TO_MOSIP_QUEUE": {
+      "id": "mosip.manual.adjudication.adjudicate",
+      "requestId": "eaaa8298-597d-4958-bd5c-f03b48dc9321",
+      "returnValue": "1",
+      "responsetime": "2025-11-10T08:35:48.946282206Z",
+      "candidateList": {
+        "count": "0",
+        "candidates": []
+      },
+      "analytics": {
+        "candidates": [
+          {
+            "referenceId": "17265110890004320250821115902",
+            "analytics": {
+              "internalScore": "8242.0",
+              "rank": "1",
+              "adjudicationDetails": [
+                {
+                  "decision": "NO_HIT",
+                  "biometricDetails": [
+                    {
+                      "biometricType": "FACE",
+                      "operatorComment": "Demandeur | ID - 17265110890071220250901112123\nCandidat | ID - 17265110890004320250821115902\n\nLes portraits sont différents [NO_HIT] - 1_richard_poyodi"
+                    },
+                    {
+                      "biometricType": "FINGER",
+                      "operatorComment": "Les empreintes sont différentes [NO_HIT] - 1_richard_poyodi"
+                    },
+                    {
+                      "biometricType": "IRIS",
+                      "operatorComment": "Les iris sont identiques [NO_HIT] - 1_richard_poyodi"
+                    }
+                  ],
+                  "biographicComment": "Les données démographiques sont différentes.\nIl s'agit d'un parent et de son enfant. [NO_HIT] - 1_richard_poyodi",
+                  "operator": "1_richard_poyodi"
+                }
+              ]
+            },
+            "modalities": [
+              {
+                "biometricType": "IIR",
+                "analytics": {
+                  "internalScore": "8480.0"
+                }
+              },
+              {
+                "biometricType": "FMR",
+                "analytics": {
+                  "internalScore": "2136.0"
+                }
+              },
+              {
+                "biometricType": "FIR",
+                "analytics": {
+                  "internalScore": "903.0"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "BUSINESS_ID": "eaaa8298-597d-4958-bd5c-f03b48dc9321",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "305d6b00-dd09-4ccf-8188-264f222ddfa0",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "END",
+    "ACTIVITY_RESULT": "SUCCESS",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:35:48.957Z",
+    "DURATION": 11,
+    "RESPONSE_TIME": "2025-11-10T08:35:48.957296856",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 15,
+    "_raw": "{ \"BUSINESS_ID\":\"8a795687-ab06-4076-bd89-12ff06cc32e9\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"9539050c-209e-4b9d-915b-cd09b578b693\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"START\",\"ACTIVITY_RESULT\":\"ACCEPTED\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:37:38.102Z\",\"DURATION\":0,\"REFERENCE_ID\":,\"mosip.version\":,\"REFERENCE_URL\":,\"OPERATION\":PUBLISH_RESPONSE_MESSAGE_TO_QUEUE,\"RETURN_VALUE\":1,\"ID\":mosip.manual.adjudication.adjudicate,\"REQUEST_ID\":8a795687-ab06-4076-bd89-12ff06cc32e9,\"REQUEST_TIME\":,\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 330 (char 329)",
+    "BUSINESS_ID": "8a795687-ab06-4076-bd89-12ff06cc32e9",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "9539050c-209e-4b9d-915b-cd09b578b693",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "START",
+    "ACTIVITY_RESULT": "ACCEPTED",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:37:38.102Z",
+    "DURATION": 0,
+    "OPERATION": "PUBLISH_RESPONSE_MESSAGE_TO_QUEUE",
+    "RETURN_VALUE": 1,
+    "ID": "mosip.manual.adjudication.adjudicate",
+    "REQUEST_ID": "8a795687-ab06-4076-bd89-12ff06cc32e9",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 16,
+    "_raw": "{ \"BUSINESS_ID\":\"8a795687-ab06-4076-bd89-12ff06cc32e9\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"9539050c-209e-4b9d-915b-cd09b578b693\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"END\",\"ACTIVITY_RESULT\":\"SUCCESS\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:37:38.114Z\",\"DURATION\":12,\"RESPONSE_TIME\":2025-11-10T08:37:38.114757985,\"RESPONSE_PUBLISHED_TO_MOSIP_QUEUE\":{\"id\":\"mosip.manual.adjudication.adjudicate\",\"requestId\":\"8a795687-ab06-4076-bd89-12ff06cc32e9\",\"returnValue\":\"1\",\"responsetime\":\"2025-11-10T08:37:38.102246222Z\",\"candidateList\":{\"count\":\"1\",\"candidates\":[{\"referenceId\":\"16842100650061520250524092001\",\"analytics\":{\"internalScore\":\"17017.0\",\"rank\":\"1\",\"adjudicationDetails\":[{\"decision\":\"HIT\",\"biometricDetails\":[{\"biometricType\":\"FACE\",\"operatorComment\":\"Demandeur | ID - 16842101520024620250519103232\\nCandidat | ID - 16842100650061520250524092001\\n\\nLes portraits sont identiques [HIT] - 1_richard_poyodi\"},{\"biometricType\":\"FINGER\",\"operatorComment\":\"Les empreintes sont identiques [HIT] - 1_richard_poyodi\"},{\"biometricType\":\"IRIS\",\"operatorComment\":\"Les iris sont identiques [HIT] - 1_richard_poyodi\"}],\"biographicComment\":\"Les données démographiques sont identiques bien que le système signale une discordance de prénom.\\nAction :\\nN/A [HIT] - 1_richard_poyodi\",\"operator\":\"1_richard_poyodi\"}]},\"modalities\":[{\"biometricType\":\"IIR\",\"analytics\":{\"internalScore\":\"17255.0\"}},{\"biometricType\":\"FMR\",\"analytics\":{\"internalScore\":\"13752.0\"}},{\"biometricType\":\"FIR\",\"analytics\":{\"internalScore\":\"16276.0\"}}]}]},\"analytics\":{\"candidates\":[]}},\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 930 (char 929)",
+    "RESPONSE_PUBLISHED_TO_MOSIP_QUEUE": {
+      "id": "mosip.manual.adjudication.adjudicate",
+      "requestId": "8a795687-ab06-4076-bd89-12ff06cc32e9",
+      "returnValue": "1",
+      "responsetime": "2025-11-10T08:37:38.102246222Z",
+      "candidateList": {
+        "count": "1",
+        "candidates": [
+          {
+            "referenceId": "16842100650061520250524092001",
+            "analytics": {
+              "internalScore": "17017.0",
+              "rank": "1",
+              "adjudicationDetails": [
+                {
+                  "decision": "HIT",
+                  "biometricDetails": [
+                    {
+                      "biometricType": "FACE",
+                      "operatorComment": "Demandeur | ID - 16842101520024620250519103232\nCandidat | ID - 16842100650061520250524092001\n\nLes portraits sont identiques [HIT] - 1_richard_poyodi"
+                    },
+                    {
+                      "biometricType": "FINGER",
+                      "operatorComment": "Les empreintes sont identiques [HIT] - 1_richard_poyodi"
+                    },
+                    {
+                      "biometricType": "IRIS",
+                      "operatorComment": "Les iris sont identiques [HIT] - 1_richard_poyodi"
+                    }
+                  ],
+                  "biographicComment": "Les données démographiques sont identiques bien que le système signale une discordance de prénom.\nAction :\nN/A [HIT] - 1_richard_poyodi",
+                  "operator": "1_richard_poyodi"
+                }
+              ]
+            },
+            "modalities": [
+              {
+                "biometricType": "IIR",
+                "analytics": {
+                  "internalScore": "17255.0"
+                }
+              },
+              {
+                "biometricType": "FMR",
+                "analytics": {
+                  "internalScore": "13752.0"
+                }
+              },
+              {
+                "biometricType": "FIR",
+                "analytics": {
+                  "internalScore": "16276.0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "analytics": {
+        "candidates": []
+      }
+    },
+    "BUSINESS_ID": "8a795687-ab06-4076-bd89-12ff06cc32e9",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "9539050c-209e-4b9d-915b-cd09b578b693",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "END",
+    "ACTIVITY_RESULT": "SUCCESS",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:37:38.114Z",
+    "DURATION": 12,
+    "RESPONSE_TIME": "2025-11-10T08:37:38.114757985",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 17,
+    "_raw": "{ \"BUSINESS_ID\":\"a49983c2-cf27-45f4-9e8e-b67ddf77a1e7\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"01c1070f-a2ab-45cf-b03e-fd841bd2982f\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"START\",\"ACTIVITY_RESULT\":\"ACCEPTED\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:42:06.083Z\",\"DURATION\":0,\"REFERENCE_ID\":,\"mosip.version\":,\"REFERENCE_URL\":,\"OPERATION\":PUBLISH_RESPONSE_MESSAGE_TO_QUEUE,\"RETURN_VALUE\":1,\"ID\":mosip.manual.adjudication.adjudicate,\"REQUEST_ID\":a49983c2-cf27-45f4-9e8e-b67ddf77a1e7,\"REQUEST_TIME\":,\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 330 (char 329)",
+    "BUSINESS_ID": "a49983c2-cf27-45f4-9e8e-b67ddf77a1e7",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "01c1070f-a2ab-45cf-b03e-fd841bd2982f",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "START",
+    "ACTIVITY_RESULT": "ACCEPTED",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:42:06.083Z",
+    "DURATION": 0,
+    "OPERATION": "PUBLISH_RESPONSE_MESSAGE_TO_QUEUE",
+    "RETURN_VALUE": 1,
+    "ID": "mosip.manual.adjudication.adjudicate",
+    "REQUEST_ID": "a49983c2-cf27-45f4-9e8e-b67ddf77a1e7",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 18,
+    "_raw": "{ \"BUSINESS_ID\":\"a49983c2-cf27-45f4-9e8e-b67ddf77a1e7\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"01c1070f-a2ab-45cf-b03e-fd841bd2982f\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"END\",\"ACTIVITY_RESULT\":\"SUCCESS\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:42:06.091Z\",\"DURATION\":8,\"RESPONSE_TIME\":2025-11-10T08:42:06.091785267,\"RESPONSE_PUBLISHED_TO_MOSIP_QUEUE\":{\"id\":\"mosip.manual.adjudication.adjudicate\",\"requestId\":\"a49983c2-cf27-45f4-9e8e-b67ddf77a1e7\",\"returnValue\":\"1\",\"responsetime\":\"2025-11-10T08:42:06.083167132Z\",\"candidateList\":{\"count\":\"1\",\"candidates\":[{\"referenceId\":\"17017107390274920250604140238\",\"analytics\":{\"internalScore\":\"19341.0\",\"rank\":\"1\",\"adjudicationDetails\":[{\"decision\":\"HIT\",\"biometricDetails\":[{\"biometricType\":\"FACE\",\"operatorComment\":\"Demandeur | ID - 17285104310035320250829104105\\nCandidat | ID - 17017107390274920250604140238\\n\\nLes portraits sont identiques [HIT] - 1_cedric_nouwossan\"},{\"biometricType\":\"FINGER\",\"operatorComment\":\"Les empreintes sont identiques [HIT] - 1_cedric_nouwossan\"},{\"biometricType\":\"IRIS\",\"operatorComment\":\"Les iris sont identiques [HIT] - 1_cedric_nouwossan\"}],\"biographicComment\":\"Le requérant a eu recours à un second enrôlement pour sa date de naissance\\n\\nAction\\nContacter le requérant pour une mise à jour de sa date de naissance [HIT] - 1_cedric_nouwossan\",\"operator\":\"1_cedric_nouwossan\"}]},\"modalities\":[{\"biometricType\":\"IIR\",\"analytics\":{\"internalScore\":\"19579.0\"}},{\"biometricType\":\"FMR\",\"analytics\":{\"internalScore\":\"9929.0\"}},{\"biometricType\":\"FIR\",\"analytics\":{\"internalScore\":\"18651.0\"}}]}]},\"analytics\":{\"candidates\":[]}},\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 929 (char 928)",
+    "RESPONSE_PUBLISHED_TO_MOSIP_QUEUE": {
+      "id": "mosip.manual.adjudication.adjudicate",
+      "requestId": "a49983c2-cf27-45f4-9e8e-b67ddf77a1e7",
+      "returnValue": "1",
+      "responsetime": "2025-11-10T08:42:06.083167132Z",
+      "candidateList": {
+        "count": "1",
+        "candidates": [
+          {
+            "referenceId": "17017107390274920250604140238",
+            "analytics": {
+              "internalScore": "19341.0",
+              "rank": "1",
+              "adjudicationDetails": [
+                {
+                  "decision": "HIT",
+                  "biometricDetails": [
+                    {
+                      "biometricType": "FACE",
+                      "operatorComment": "Demandeur | ID - 17285104310035320250829104105\nCandidat | ID - 17017107390274920250604140238\n\nLes portraits sont identiques [HIT] - 1_cedric_nouwossan"
+                    },
+                    {
+                      "biometricType": "FINGER",
+                      "operatorComment": "Les empreintes sont identiques [HIT] - 1_cedric_nouwossan"
+                    },
+                    {
+                      "biometricType": "IRIS",
+                      "operatorComment": "Les iris sont identiques [HIT] - 1_cedric_nouwossan"
+                    }
+                  ],
+                  "biographicComment": "Le requérant a eu recours à un second enrôlement pour sa date de naissance\n\nAction\nContacter le requérant pour une mise à jour de sa date de naissance [HIT] - 1_cedric_nouwossan",
+                  "operator": "1_cedric_nouwossan"
+                }
+              ]
+            },
+            "modalities": [
+              {
+                "biometricType": "IIR",
+                "analytics": {
+                  "internalScore": "19579.0"
+                }
+              },
+              {
+                "biometricType": "FMR",
+                "analytics": {
+                  "internalScore": "9929.0"
+                }
+              },
+              {
+                "biometricType": "FIR",
+                "analytics": {
+                  "internalScore": "18651.0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "analytics": {
+        "candidates": []
+      }
+    },
+    "BUSINESS_ID": "a49983c2-cf27-45f4-9e8e-b67ddf77a1e7",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "01c1070f-a2ab-45cf-b03e-fd841bd2982f",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "END",
+    "ACTIVITY_RESULT": "SUCCESS",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:42:06.091Z",
+    "DURATION": 8,
+    "RESPONSE_TIME": "2025-11-10T08:42:06.091785267",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 19,
+    "_raw": "{ \"BUSINESS_ID\":\"04fc0301-4b38-42c0-a463-b7cab2a3d9b6\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"712da943-3cc7-48ad-a3b2-65cc3be8a062\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"START\",\"ACTIVITY_RESULT\":\"ACCEPTED\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:42:19.239Z\",\"DURATION\":0,\"REFERENCE_ID\":,\"mosip.version\":,\"REFERENCE_URL\":,\"OPERATION\":PUBLISH_RESPONSE_MESSAGE_TO_QUEUE,\"RETURN_VALUE\":1,\"ID\":mosip.manual.adjudication.adjudicate,\"REQUEST_ID\":04fc0301-4b38-42c0-a463-b7cab2a3d9b6,\"REQUEST_TIME\":,\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 330 (char 329)",
+    "BUSINESS_ID": "04fc0301-4b38-42c0-a463-b7cab2a3d9b6",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "712da943-3cc7-48ad-a3b2-65cc3be8a062",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "START",
+    "ACTIVITY_RESULT": "ACCEPTED",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:42:19.239Z",
+    "DURATION": 0,
+    "OPERATION": "PUBLISH_RESPONSE_MESSAGE_TO_QUEUE",
+    "RETURN_VALUE": 1,
+    "ID": "mosip.manual.adjudication.adjudicate",
+    "REQUEST_ID": "04fc0301-4b38-42c0-a463-b7cab2a3d9b6",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 20,
+    "_raw": "{ \"BUSINESS_ID\":\"04fc0301-4b38-42c0-a463-b7cab2a3d9b6\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"712da943-3cc7-48ad-a3b2-65cc3be8a062\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"END\",\"ACTIVITY_RESULT\":\"SUCCESS\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:42:19.249Z\",\"DURATION\":10,\"RESPONSE_TIME\":2025-11-10T08:42:19.249877219,\"RESPONSE_PUBLISHED_TO_MOSIP_QUEUE\":{\"id\":\"mosip.manual.adjudication.adjudicate\",\"requestId\":\"04fc0301-4b38-42c0-a463-b7cab2a3d9b6\",\"returnValue\":\"1\",\"responsetime\":\"2025-11-10T08:42:19.239063128Z\",\"candidateList\":{\"count\":\"0\",\"candidates\":[]},\"analytics\":{\"candidates\":[{\"referenceId\":\"17250111420008420250822103238\",\"analytics\":{\"internalScore\":\"13024.0\",\"rank\":\"1\",\"adjudicationDetails\":[{\"decision\":\"NO_HIT\",\"biometricDetails\":[{\"biometricType\":\"FACE\",\"operatorComment\":\"Demandeur | ID - 17250111330064920250902091834\\nCandidat | ID - 17250111420008420250822103238\\n\\nLes portraits sont différents [NO_HIT] - 1_richard_poyodi\"},{\"biometricType\":\"FINGER\",\"operatorComment\":\"Les empreintes sont identiques [NO_HIT] - 1_richard_poyodi\"},{\"biometricType\":\"IRIS\",\"operatorComment\":\"Les iris sont différents [NO_HIT] - 1_richard_poyodi\"}],\"biographicComment\":\"Les données démographiques sont différentes.\\nIl s'agit d'un mineur et de son tuteur / représentant légal [NO_HIT] - 1_richard_poyodi\",\"operator\":\"1_richard_poyodi\"}]},\"modalities\":[{\"biometricType\":\"IIR\",\"analytics\":{\"internalScore\":\"2128.0\"}},{\"biometricType\":\"FMR\",\"analytics\":{\"internalScore\":\"3269.0\"}},{\"biometricType\":\"FIR\",\"analytics\":{\"internalScore\":\"13262.0\"}}]}]}},\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 963 (char 962)",
+    "RESPONSE_PUBLISHED_TO_MOSIP_QUEUE": {
+      "id": "mosip.manual.adjudication.adjudicate",
+      "requestId": "04fc0301-4b38-42c0-a463-b7cab2a3d9b6",
+      "returnValue": "1",
+      "responsetime": "2025-11-10T08:42:19.239063128Z",
+      "candidateList": {
+        "count": "0",
+        "candidates": []
+      },
+      "analytics": {
+        "candidates": [
+          {
+            "referenceId": "17250111420008420250822103238",
+            "analytics": {
+              "internalScore": "13024.0",
+              "rank": "1",
+              "adjudicationDetails": [
+                {
+                  "decision": "NO_HIT",
+                  "biometricDetails": [
+                    {
+                      "biometricType": "FACE",
+                      "operatorComment": "Demandeur | ID - 17250111330064920250902091834\nCandidat | ID - 17250111420008420250822103238\n\nLes portraits sont différents [NO_HIT] - 1_richard_poyodi"
+                    },
+                    {
+                      "biometricType": "FINGER",
+                      "operatorComment": "Les empreintes sont identiques [NO_HIT] - 1_richard_poyodi"
+                    },
+                    {
+                      "biometricType": "IRIS",
+                      "operatorComment": "Les iris sont différents [NO_HIT] - 1_richard_poyodi"
+                    }
+                  ],
+                  "biographicComment": "Les données démographiques sont différentes.\nIl s'agit d'un mineur et de son tuteur / représentant légal [NO_HIT] - 1_richard_poyodi",
+                  "operator": "1_richard_poyodi"
+                }
+              ]
+            },
+            "modalities": [
+              {
+                "biometricType": "IIR",
+                "analytics": {
+                  "internalScore": "2128.0"
+                }
+              },
+              {
+                "biometricType": "FMR",
+                "analytics": {
+                  "internalScore": "3269.0"
+                }
+              },
+              {
+                "biometricType": "FIR",
+                "analytics": {
+                  "internalScore": "13262.0"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "BUSINESS_ID": "04fc0301-4b38-42c0-a463-b7cab2a3d9b6",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "712da943-3cc7-48ad-a3b2-65cc3be8a062",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "END",
+    "ACTIVITY_RESULT": "SUCCESS",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:42:19.249Z",
+    "DURATION": 10,
+    "RESPONSE_TIME": "2025-11-10T08:42:19.249877219",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 21,
+    "_raw": "{ \"BUSINESS_ID\":\"14e1a04e-2c17-40ec-bbb3-2bd2048bf3bf\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"8570da7a-0237-425a-a8ed-1d5a2d6bbfc5\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"START\",\"ACTIVITY_RESULT\":\"ACCEPTED\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:46:12.301Z\",\"DURATION\":0,\"REFERENCE_ID\":,\"mosip.version\":,\"REFERENCE_URL\":,\"OPERATION\":PUBLISH_RESPONSE_MESSAGE_TO_QUEUE,\"RETURN_VALUE\":1,\"ID\":mosip.manual.adjudication.adjudicate,\"REQUEST_ID\":14e1a04e-2c17-40ec-bbb3-2bd2048bf3bf,\"REQUEST_TIME\":,\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 330 (char 329)",
+    "BUSINESS_ID": "14e1a04e-2c17-40ec-bbb3-2bd2048bf3bf",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "8570da7a-0237-425a-a8ed-1d5a2d6bbfc5",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "START",
+    "ACTIVITY_RESULT": "ACCEPTED",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:46:12.301Z",
+    "DURATION": 0,
+    "OPERATION": "PUBLISH_RESPONSE_MESSAGE_TO_QUEUE",
+    "RETURN_VALUE": 1,
+    "ID": "mosip.manual.adjudication.adjudicate",
+    "REQUEST_ID": "14e1a04e-2c17-40ec-bbb3-2bd2048bf3bf",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 22,
+    "_raw": "{ \"BUSINESS_ID\":\"14e1a04e-2c17-40ec-bbb3-2bd2048bf3bf\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"8570da7a-0237-425a-a8ed-1d5a2d6bbfc5\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"END\",\"ACTIVITY_RESULT\":\"SUCCESS\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:46:12.312Z\",\"DURATION\":11,\"RESPONSE_TIME\":2025-11-10T08:46:12.312189663,\"RESPONSE_PUBLISHED_TO_MOSIP_QUEUE\":{\"id\":\"mosip.manual.adjudication.adjudicate\",\"requestId\":\"14e1a04e-2c17-40ec-bbb3-2bd2048bf3bf\",\"returnValue\":\"1\",\"responsetime\":\"2025-11-10T08:46:12.301269391Z\",\"candidateList\":{\"count\":\"0\",\"candidates\":[]},\"analytics\":{\"candidates\":[{\"referenceId\":\"17250111330003120250821120906\",\"analytics\":{\"internalScore\":\"10199.0\",\"rank\":\"1\",\"adjudicationDetails\":[{\"decision\":\"NO_HIT\",\"biometricDetails\":[{\"biometricType\":\"FACE\",\"operatorComment\":\"Demandeur | ID - 17250111330067320250902125240\\nCandidat | ID - 17250111330003120250821120906\\n\\nLes portraits sont différents [NO_HIT] - 1_richard_poyodi\"},{\"biometricType\":\"FINGER\",\"operatorComment\":\"Les empreintes sont identiques [NO_HIT] - 1_richard_poyodi\"},{\"biometricType\":\"IRIS\",\"operatorComment\":\"Les iris sont différents [NO_HIT] - 1_richard_poyodi\"}],\"biographicComment\":\"Les données démographiques sont différentes.\\nIl s'agit d'un mineur et de son tuteur / représentant légal [NO_HIT] - 1_richard_poyodi\",\"operator\":\"1_richard_poyodi\"}]},\"modalities\":[{\"biometricType\":\"IIR\",\"analytics\":{\"internalScore\":\"2257.0\"}},{\"biometricType\":\"FMR\",\"analytics\":{\"internalScore\":\"2608.0\"}},{\"biometricType\":\"FIR\",\"analytics\":{\"internalScore\":\"10437.0\"}}]}]}},\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 963 (char 962)",
+    "RESPONSE_PUBLISHED_TO_MOSIP_QUEUE": {
+      "id": "mosip.manual.adjudication.adjudicate",
+      "requestId": "14e1a04e-2c17-40ec-bbb3-2bd2048bf3bf",
+      "returnValue": "1",
+      "responsetime": "2025-11-10T08:46:12.301269391Z",
+      "candidateList": {
+        "count": "0",
+        "candidates": []
+      },
+      "analytics": {
+        "candidates": [
+          {
+            "referenceId": "17250111330003120250821120906",
+            "analytics": {
+              "internalScore": "10199.0",
+              "rank": "1",
+              "adjudicationDetails": [
+                {
+                  "decision": "NO_HIT",
+                  "biometricDetails": [
+                    {
+                      "biometricType": "FACE",
+                      "operatorComment": "Demandeur | ID - 17250111330067320250902125240\nCandidat | ID - 17250111330003120250821120906\n\nLes portraits sont différents [NO_HIT] - 1_richard_poyodi"
+                    },
+                    {
+                      "biometricType": "FINGER",
+                      "operatorComment": "Les empreintes sont identiques [NO_HIT] - 1_richard_poyodi"
+                    },
+                    {
+                      "biometricType": "IRIS",
+                      "operatorComment": "Les iris sont différents [NO_HIT] - 1_richard_poyodi"
+                    }
+                  ],
+                  "biographicComment": "Les données démographiques sont différentes.\nIl s'agit d'un mineur et de son tuteur / représentant légal [NO_HIT] - 1_richard_poyodi",
+                  "operator": "1_richard_poyodi"
+                }
+              ]
+            },
+            "modalities": [
+              {
+                "biometricType": "IIR",
+                "analytics": {
+                  "internalScore": "2257.0"
+                }
+              },
+              {
+                "biometricType": "FMR",
+                "analytics": {
+                  "internalScore": "2608.0"
+                }
+              },
+              {
+                "biometricType": "FIR",
+                "analytics": {
+                  "internalScore": "10437.0"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "BUSINESS_ID": "14e1a04e-2c17-40ec-bbb3-2bd2048bf3bf",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "8570da7a-0237-425a-a8ed-1d5a2d6bbfc5",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "END",
+    "ACTIVITY_RESULT": "SUCCESS",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:46:12.312Z",
+    "DURATION": 11,
+    "RESPONSE_TIME": "2025-11-10T08:46:12.312189663",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 23,
+    "_raw": "{ \"BUSINESS_ID\":\"9c5cffda-e651-4b54-83ef-bcedad565daa\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"128fe91a-ff66-445a-a2fe-14cbc8f0eeb1\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"START\",\"ACTIVITY_RESULT\":\"ACCEPTED\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:50:30.739Z\",\"DURATION\":0,\"REFERENCE_ID\":,\"mosip.version\":,\"REFERENCE_URL\":,\"OPERATION\":PUBLISH_RESPONSE_MESSAGE_TO_QUEUE,\"RETURN_VALUE\":1,\"ID\":mosip.manual.adjudication.adjudicate,\"REQUEST_ID\":9c5cffda-e651-4b54-83ef-bcedad565daa,\"REQUEST_TIME\":,\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 330 (char 329)",
+    "BUSINESS_ID": "9c5cffda-e651-4b54-83ef-bcedad565daa",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "128fe91a-ff66-445a-a2fe-14cbc8f0eeb1",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "START",
+    "ACTIVITY_RESULT": "ACCEPTED",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:50:30.739Z",
+    "DURATION": 0,
+    "OPERATION": "PUBLISH_RESPONSE_MESSAGE_TO_QUEUE",
+    "RETURN_VALUE": 1,
+    "ID": "mosip.manual.adjudication.adjudicate",
+    "REQUEST_ID": "9c5cffda-e651-4b54-83ef-bcedad565daa",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 24,
+    "_raw": "{ \"BUSINESS_ID\":\"9c5cffda-e651-4b54-83ef-bcedad565daa\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"128fe91a-ff66-445a-a2fe-14cbc8f0eeb1\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"END\",\"ACTIVITY_RESULT\":\"SUCCESS\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:50:30.747Z\",\"DURATION\":8,\"RESPONSE_TIME\":2025-11-10T08:50:30.747924067,\"RESPONSE_PUBLISHED_TO_MOSIP_QUEUE\":{\"id\":\"mosip.manual.adjudication.adjudicate\",\"requestId\":\"9c5cffda-e651-4b54-83ef-bcedad565daa\",\"returnValue\":\"1\",\"responsetime\":\"2025-11-10T08:50:30.738826777Z\",\"candidateList\":{\"count\":\"0\",\"candidates\":[]},\"analytics\":{\"candidates\":[{\"referenceId\":\"17250111330065220250902095047\",\"analytics\":{\"internalScore\":\"13323.0\",\"rank\":\"1\",\"adjudicationDetails\":[{\"decision\":\"NO_HIT\",\"biometricDetails\":[{\"biometricType\":\"FACE\",\"operatorComment\":\"Demandeur | ID - 17442100960051620250830153212\\nCandidat | ID - 17250111330065220250902095047\\n\\nLes portraits sont différents [NO_HIT] - 1_ismail_maiba\"},{\"biometricType\":\"FINGER\",\"operatorComment\":\"Les empreintes sont identiques [NO_HIT] - 1_ismail_maiba\"},{\"biometricType\":\"IRIS\",\"operatorComment\":\"Les iris sont différents [NO_HIT] - 1_ismail_maiba\"}],\"biographicComment\":\"Les données démographiques sont différentes\\nIl s'agit d'un mineur et de son tuteur / représentant légal. [NO_HIT] - 1_ismail_maiba\",\"operator\":\"1_ismail_maiba\"}]},\"modalities\":[{\"biometricType\":\"IIR\",\"analytics\":{\"internalScore\":\"2096.0\"}},{\"biometricType\":\"FMR\",\"analytics\":{\"internalScore\":\"2953.0\"}},{\"biometricType\":\"FIR\",\"analytics\":{\"internalScore\":\"13561.0\"}}]}]}},\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 962 (char 961)",
+    "RESPONSE_PUBLISHED_TO_MOSIP_QUEUE": {
+      "id": "mosip.manual.adjudication.adjudicate",
+      "requestId": "9c5cffda-e651-4b54-83ef-bcedad565daa",
+      "returnValue": "1",
+      "responsetime": "2025-11-10T08:50:30.738826777Z",
+      "candidateList": {
+        "count": "0",
+        "candidates": []
+      },
+      "analytics": {
+        "candidates": [
+          {
+            "referenceId": "17250111330065220250902095047",
+            "analytics": {
+              "internalScore": "13323.0",
+              "rank": "1",
+              "adjudicationDetails": [
+                {
+                  "decision": "NO_HIT",
+                  "biometricDetails": [
+                    {
+                      "biometricType": "FACE",
+                      "operatorComment": "Demandeur | ID - 17442100960051620250830153212\nCandidat | ID - 17250111330065220250902095047\n\nLes portraits sont différents [NO_HIT] - 1_ismail_maiba"
+                    },
+                    {
+                      "biometricType": "FINGER",
+                      "operatorComment": "Les empreintes sont identiques [NO_HIT] - 1_ismail_maiba"
+                    },
+                    {
+                      "biometricType": "IRIS",
+                      "operatorComment": "Les iris sont différents [NO_HIT] - 1_ismail_maiba"
+                    }
+                  ],
+                  "biographicComment": "Les données démographiques sont différentes\nIl s'agit d'un mineur et de son tuteur / représentant légal. [NO_HIT] - 1_ismail_maiba",
+                  "operator": "1_ismail_maiba"
+                }
+              ]
+            },
+            "modalities": [
+              {
+                "biometricType": "IIR",
+                "analytics": {
+                  "internalScore": "2096.0"
+                }
+              },
+              {
+                "biometricType": "FMR",
+                "analytics": {
+                  "internalScore": "2953.0"
+                }
+              },
+              {
+                "biometricType": "FIR",
+                "analytics": {
+                  "internalScore": "13561.0"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "BUSINESS_ID": "9c5cffda-e651-4b54-83ef-bcedad565daa",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "128fe91a-ff66-445a-a2fe-14cbc8f0eeb1",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "END",
+    "ACTIVITY_RESULT": "SUCCESS",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:50:30.747Z",
+    "DURATION": 8,
+    "RESPONSE_TIME": "2025-11-10T08:50:30.747924067",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 25,
+    "_raw": "{ \"BUSINESS_ID\":\"79e07911-960f-4109-a08b-80c6f538d105\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"f3d35613-1482-462b-ad7d-ca31610b01cb\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"START\",\"ACTIVITY_RESULT\":\"ACCEPTED\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:54:55.518Z\",\"DURATION\":0,\"REFERENCE_ID\":,\"mosip.version\":,\"REFERENCE_URL\":,\"OPERATION\":PUBLISH_RESPONSE_MESSAGE_TO_QUEUE,\"RETURN_VALUE\":1,\"ID\":mosip.manual.adjudication.adjudicate,\"REQUEST_ID\":79e07911-960f-4109-a08b-80c6f538d105,\"REQUEST_TIME\":,\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 330 (char 329)",
+    "BUSINESS_ID": "79e07911-960f-4109-a08b-80c6f538d105",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "f3d35613-1482-462b-ad7d-ca31610b01cb",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "START",
+    "ACTIVITY_RESULT": "ACCEPTED",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:54:55.518Z",
+    "DURATION": 0,
+    "OPERATION": "PUBLISH_RESPONSE_MESSAGE_TO_QUEUE",
+    "RETURN_VALUE": 1,
+    "ID": "mosip.manual.adjudication.adjudicate",
+    "REQUEST_ID": "79e07911-960f-4109-a08b-80c6f538d105",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 26,
+    "_raw": "{ \"BUSINESS_ID\":\"79e07911-960f-4109-a08b-80c6f538d105\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"f3d35613-1482-462b-ad7d-ca31610b01cb\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"END\",\"ACTIVITY_RESULT\":\"SUCCESS\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:54:55.530Z\",\"DURATION\":12,\"RESPONSE_TIME\":2025-11-10T08:54:55.530805979,\"RESPONSE_PUBLISHED_TO_MOSIP_QUEUE\":{\"id\":\"mosip.manual.adjudication.adjudicate\",\"requestId\":\"79e07911-960f-4109-a08b-80c6f538d105\",\"returnValue\":\"1\",\"responsetime\":\"2025-11-10T08:54:55.518026992Z\",\"candidateList\":{\"count\":\"1\",\"candidates\":[{\"referenceId\":\"17073111240138820250531084520\",\"analytics\":{\"internalScore\":\"20447.0\",\"rank\":\"1\",\"adjudicationDetails\":[{\"decision\":\"HIT\",\"biometricDetails\":[{\"biometricType\":\"FACE\",\"operatorComment\":\"Demandeur | ID - 17377111910071320250909151207\\nCandidat | ID - 17073111240138820250531084520\\n\\nLes portraits sont identiques [HIT] - 1_cedric_nouwossan\"},{\"biometricType\":\"FINGER\",\"operatorComment\":\"Les empreintes sont identiques [HIT] - 1_cedric_nouwossan\"},{\"biometricType\":\"IRIS\",\"operatorComment\":\"Les iris sont identiques [HIT] - 1_cedric_nouwossan\"}],\"biographicComment\":\"Le requérant a eu recours à un second enrôlement pour sa date de naissance\\n\\nAction\\nContacter le requérant pour une mise à jour de sa date de naissance [HIT] - 1_cedric_nouwossan\",\"operator\":\"1_cedric_nouwossan\"}]},\"modalities\":[{\"biometricType\":\"IIR\",\"analytics\":{\"internalScore\":\"20685.0\"}},{\"biometricType\":\"FMR\",\"analytics\":{\"internalScore\":\"11489.0\"}},{\"biometricType\":\"FIR\",\"analytics\":{\"internalScore\":\"9793.0\"}}]}]},\"analytics\":{\"candidates\":[]}},\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 930 (char 929)",
+    "RESPONSE_PUBLISHED_TO_MOSIP_QUEUE": {
+      "id": "mosip.manual.adjudication.adjudicate",
+      "requestId": "79e07911-960f-4109-a08b-80c6f538d105",
+      "returnValue": "1",
+      "responsetime": "2025-11-10T08:54:55.518026992Z",
+      "candidateList": {
+        "count": "1",
+        "candidates": [
+          {
+            "referenceId": "17073111240138820250531084520",
+            "analytics": {
+              "internalScore": "20447.0",
+              "rank": "1",
+              "adjudicationDetails": [
+                {
+                  "decision": "HIT",
+                  "biometricDetails": [
+                    {
+                      "biometricType": "FACE",
+                      "operatorComment": "Demandeur | ID - 17377111910071320250909151207\nCandidat | ID - 17073111240138820250531084520\n\nLes portraits sont identiques [HIT] - 1_cedric_nouwossan"
+                    },
+                    {
+                      "biometricType": "FINGER",
+                      "operatorComment": "Les empreintes sont identiques [HIT] - 1_cedric_nouwossan"
+                    },
+                    {
+                      "biometricType": "IRIS",
+                      "operatorComment": "Les iris sont identiques [HIT] - 1_cedric_nouwossan"
+                    }
+                  ],
+                  "biographicComment": "Le requérant a eu recours à un second enrôlement pour sa date de naissance\n\nAction\nContacter le requérant pour une mise à jour de sa date de naissance [HIT] - 1_cedric_nouwossan",
+                  "operator": "1_cedric_nouwossan"
+                }
+              ]
+            },
+            "modalities": [
+              {
+                "biometricType": "IIR",
+                "analytics": {
+                  "internalScore": "20685.0"
+                }
+              },
+              {
+                "biometricType": "FMR",
+                "analytics": {
+                  "internalScore": "11489.0"
+                }
+              },
+              {
+                "biometricType": "FIR",
+                "analytics": {
+                  "internalScore": "9793.0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "analytics": {
+        "candidates": []
+      }
+    },
+    "BUSINESS_ID": "79e07911-960f-4109-a08b-80c6f538d105",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "f3d35613-1482-462b-ad7d-ca31610b01cb",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "END",
+    "ACTIVITY_RESULT": "SUCCESS",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:54:55.530Z",
+    "DURATION": 12,
+    "RESPONSE_TIME": "2025-11-10T08:54:55.530805979",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 27,
+    "_raw": "{ \"BUSINESS_ID\":\"fa471e10-0504-4236-9f7e-e2a0e59118f9\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"f6662e54-89e3-4470-97b9-3e07a9344869\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"START\",\"ACTIVITY_RESULT\":\"ACCEPTED\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:56:09.571Z\",\"DURATION\":0,\"REFERENCE_ID\":,\"mosip.version\":,\"REFERENCE_URL\":,\"OPERATION\":PUBLISH_RESPONSE_MESSAGE_TO_QUEUE,\"RETURN_VALUE\":1,\"ID\":mosip.manual.adjudication.adjudicate,\"REQUEST_ID\":fa471e10-0504-4236-9f7e-e2a0e59118f9,\"REQUEST_TIME\":,\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 330 (char 329)",
+    "BUSINESS_ID": "fa471e10-0504-4236-9f7e-e2a0e59118f9",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "f6662e54-89e3-4470-97b9-3e07a9344869",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "START",
+    "ACTIVITY_RESULT": "ACCEPTED",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:56:09.571Z",
+    "DURATION": 0,
+    "OPERATION": "PUBLISH_RESPONSE_MESSAGE_TO_QUEUE",
+    "RETURN_VALUE": 1,
+    "ID": "mosip.manual.adjudication.adjudicate",
+    "REQUEST_ID": "fa471e10-0504-4236-9f7e-e2a0e59118f9",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 28,
+    "_raw": "{ \"BUSINESS_ID\":\"fa471e10-0504-4236-9f7e-e2a0e59118f9\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"f6662e54-89e3-4470-97b9-3e07a9344869\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"END\",\"ACTIVITY_RESULT\":\"SUCCESS\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:56:09.584Z\",\"DURATION\":13,\"RESPONSE_TIME\":2025-11-10T08:56:09.584146307,\"RESPONSE_PUBLISHED_TO_MOSIP_QUEUE\":{\"id\":\"mosip.manual.adjudication.adjudicate\",\"requestId\":\"fa471e10-0504-4236-9f7e-e2a0e59118f9\",\"returnValue\":\"1\",\"responsetime\":\"2025-11-10T08:56:09.571154239Z\",\"candidateList\":{\"count\":\"0\",\"candidates\":[]},\"analytics\":{\"candidates\":[{\"referenceId\":\"17264111200223120250831113204\",\"analytics\":{\"internalScore\":\"13732.0\",\"rank\":\"1\",\"adjudicationDetails\":[{\"decision\":\"NO_HIT\",\"biometricDetails\":[{\"biometricType\":\"FACE\",\"operatorComment\":\"Demandeur | ID - 17264111170057820250831112214\\nCandidat | ID - 17264111200223120250831113204\\n\\nLes portraits sont différents [NO_HIT] - 1_ismail_maiba\"},{\"biometricType\":\"FINGER\",\"operatorComment\":\"Les empreintes sont différentes [NO_HIT] - 1_ismail_maiba\"},{\"biometricType\":\"IRIS\",\"operatorComment\":\"Les iris sont identiques [NO_HIT] - 1_ismail_maiba\"}],\"biographicComment\":\"Les données démographiques sont différentes\\nIl s'agit d'un mineur et de son tuteur / représentant légal. [NO_HIT] - 1_ismail_maiba\",\"operator\":\"1_ismail_maiba\"}]},\"modalities\":[{\"biometricType\":\"IIR\",\"analytics\":{\"internalScore\":\"13970.0\"}},{\"biometricType\":\"FMR\",\"analytics\":{\"internalScore\":\"1498.0\"}},{\"biometricType\":\"FIR\",\"analytics\":{\"internalScore\":\"1453.0\"}}]}]}},\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 963 (char 962)",
+    "RESPONSE_PUBLISHED_TO_MOSIP_QUEUE": {
+      "id": "mosip.manual.adjudication.adjudicate",
+      "requestId": "fa471e10-0504-4236-9f7e-e2a0e59118f9",
+      "returnValue": "1",
+      "responsetime": "2025-11-10T08:56:09.571154239Z",
+      "candidateList": {
+        "count": "0",
+        "candidates": []
+      },
+      "analytics": {
+        "candidates": [
+          {
+            "referenceId": "17264111200223120250831113204",
+            "analytics": {
+              "internalScore": "13732.0",
+              "rank": "1",
+              "adjudicationDetails": [
+                {
+                  "decision": "NO_HIT",
+                  "biometricDetails": [
+                    {
+                      "biometricType": "FACE",
+                      "operatorComment": "Demandeur | ID - 17264111170057820250831112214\nCandidat | ID - 17264111200223120250831113204\n\nLes portraits sont différents [NO_HIT] - 1_ismail_maiba"
+                    },
+                    {
+                      "biometricType": "FINGER",
+                      "operatorComment": "Les empreintes sont différentes [NO_HIT] - 1_ismail_maiba"
+                    },
+                    {
+                      "biometricType": "IRIS",
+                      "operatorComment": "Les iris sont identiques [NO_HIT] - 1_ismail_maiba"
+                    }
+                  ],
+                  "biographicComment": "Les données démographiques sont différentes\nIl s'agit d'un mineur et de son tuteur / représentant légal. [NO_HIT] - 1_ismail_maiba",
+                  "operator": "1_ismail_maiba"
+                }
+              ]
+            },
+            "modalities": [
+              {
+                "biometricType": "IIR",
+                "analytics": {
+                  "internalScore": "13970.0"
+                }
+              },
+              {
+                "biometricType": "FMR",
+                "analytics": {
+                  "internalScore": "1498.0"
+                }
+              },
+              {
+                "biometricType": "FIR",
+                "analytics": {
+                  "internalScore": "1453.0"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "BUSINESS_ID": "fa471e10-0504-4236-9f7e-e2a0e59118f9",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "f6662e54-89e3-4470-97b9-3e07a9344869",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "END",
+    "ACTIVITY_RESULT": "SUCCESS",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:56:09.584Z",
+    "DURATION": 13,
+    "RESPONSE_TIME": "2025-11-10T08:56:09.584146307",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 29,
+    "_raw": "{ \"BUSINESS_ID\":\"d95c394b-1e4f-4fda-8989-dc55c7a61fa7\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"c982f549-a30a-47d1-9be1-dc3f7eb56078\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"START\",\"ACTIVITY_RESULT\":\"ACCEPTED\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:56:26.753Z\",\"DURATION\":0,\"REFERENCE_ID\":,\"mosip.version\":,\"REFERENCE_URL\":,\"OPERATION\":PUBLISH_RESPONSE_MESSAGE_TO_QUEUE,\"RETURN_VALUE\":1,\"ID\":mosip.manual.adjudication.adjudicate,\"REQUEST_ID\":d95c394b-1e4f-4fda-8989-dc55c7a61fa7,\"REQUEST_TIME\":,\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 330 (char 329)",
+    "BUSINESS_ID": "d95c394b-1e4f-4fda-8989-dc55c7a61fa7",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "c982f549-a30a-47d1-9be1-dc3f7eb56078",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "START",
+    "ACTIVITY_RESULT": "ACCEPTED",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:56:26.753Z",
+    "DURATION": 0,
+    "OPERATION": "PUBLISH_RESPONSE_MESSAGE_TO_QUEUE",
+    "RETURN_VALUE": 1,
+    "ID": "mosip.manual.adjudication.adjudicate",
+    "REQUEST_ID": "d95c394b-1e4f-4fda-8989-dc55c7a61fa7",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 30,
+    "_raw": "{ \"BUSINESS_ID\":\"d95c394b-1e4f-4fda-8989-dc55c7a61fa7\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"c982f549-a30a-47d1-9be1-dc3f7eb56078\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"END\",\"ACTIVITY_RESULT\":\"SUCCESS\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:56:26.763Z\",\"DURATION\":10,\"RESPONSE_TIME\":2025-11-10T08:56:26.763562293,\"RESPONSE_PUBLISHED_TO_MOSIP_QUEUE\":{\"id\":\"mosip.manual.adjudication.adjudicate\",\"requestId\":\"d95c394b-1e4f-4fda-8989-dc55c7a61fa7\",\"returnValue\":\"1\",\"responsetime\":\"2025-11-10T08:56:26.752790621Z\",\"candidateList\":{\"count\":\"0\",\"candidates\":[]},\"analytics\":{\"candidates\":[{\"referenceId\":\"17265110890004320250821115902\",\"analytics\":{\"internalScore\":\"13497.0\",\"rank\":\"1\",\"adjudicationDetails\":[{\"decision\":\"NO_HIT\",\"biometricDetails\":[{\"biometricType\":\"FACE\",\"operatorComment\":\"Demandeur | ID - 17265110890071320250901114003\\nCandidat | ID - 17265110890004320250821115902\\n\\nLes portraits sont différents [NO_HIT] - 1_richard_poyodi\"},{\"biometricType\":\"FINGER\",\"operatorComment\":\"Les empreintes sont identiques [NO_HIT] - 1_richard_poyodi\"},{\"biometricType\":\"IRIS\",\"operatorComment\":\"Les iris sont identiques [NO_HIT] - 1_richard_poyodi\"}],\"biographicComment\":\"Les données démographiques sont différentes.\\nIl s'agit d'un parent et de son enfant. [NO_HIT] - 1_richard_poyodi\",\"operator\":\"1_richard_poyodi\"}]},\"modalities\":[{\"biometricType\":\"IIR\",\"analytics\":{\"internalScore\":\"13735.0\"}},{\"biometricType\":\"FMR\",\"analytics\":{\"internalScore\":\"2992.0\"}},{\"biometricType\":\"FIR\",\"analytics\":{\"internalScore\":\"12481.0\"}}]},{\"referenceId\":\"17265110890071220250901112123\",\"analytics\":{\"internalScore\":\"7231.0\",\"rank\":\"1\",\"adjudicationDetails\":[{\"decision\":\"NO_HIT\",\"biometricDetails\":[{\"biometricType\":\"FACE\",\"operatorComment\":\"Demandeur | ID - 17265110890071320250901114003\\nCandidat | ID - 17265110890071220250901112123\\n\\nLes portraits sont différents [NO_HIT] - 1_richard_poyodi\"},{\"biometricType\":\"FINGER\",\"operatorComment\":\"Les empreintes sont différentes [NO_HIT] - 1_richard_poyodi\"},{\"biometricType\":\"IRIS\",\"operatorComment\":\"Les iris sont identiques [NO_HIT] - 1_richard_poyodi\"}],\"biographicComment\":\"Les données démographiques sont différentes.\\nLe candidat et le demandeur sont issus de la même fratrie et ont le même tuteur / représentant légal [NO_HIT] - 1_richard_poyodi\",\"operator\":\"1_richard_poyodi\"}]},\"modalities\":[{\"biometricType\":\"IIR\",\"analytics\":{\"internalScore\":\"7469.0\"}},{\"biometricType\":\"FMR\",\"analytics\":{\"internalScore\":\"6154.0\"}},{\"biometricType\":\"FIR\",\"analytics\":{\"internalScore\":\"1051.0\"}}]}]}},\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 963 (char 962)",
+    "RESPONSE_PUBLISHED_TO_MOSIP_QUEUE": {
+      "id": "mosip.manual.adjudication.adjudicate",
+      "requestId": "d95c394b-1e4f-4fda-8989-dc55c7a61fa7",
+      "returnValue": "1",
+      "responsetime": "2025-11-10T08:56:26.752790621Z",
+      "candidateList": {
+        "count": "0",
+        "candidates": []
+      },
+      "analytics": {
+        "candidates": [
+          {
+            "referenceId": "17265110890004320250821115902",
+            "analytics": {
+              "internalScore": "13497.0",
+              "rank": "1",
+              "adjudicationDetails": [
+                {
+                  "decision": "NO_HIT",
+                  "biometricDetails": [
+                    {
+                      "biometricType": "FACE",
+                      "operatorComment": "Demandeur | ID - 17265110890071320250901114003\nCandidat | ID - 17265110890004320250821115902\n\nLes portraits sont différents [NO_HIT] - 1_richard_poyodi"
+                    },
+                    {
+                      "biometricType": "FINGER",
+                      "operatorComment": "Les empreintes sont identiques [NO_HIT] - 1_richard_poyodi"
+                    },
+                    {
+                      "biometricType": "IRIS",
+                      "operatorComment": "Les iris sont identiques [NO_HIT] - 1_richard_poyodi"
+                    }
+                  ],
+                  "biographicComment": "Les données démographiques sont différentes.\nIl s'agit d'un parent et de son enfant. [NO_HIT] - 1_richard_poyodi",
+                  "operator": "1_richard_poyodi"
+                }
+              ]
+            },
+            "modalities": [
+              {
+                "biometricType": "IIR",
+                "analytics": {
+                  "internalScore": "13735.0"
+                }
+              },
+              {
+                "biometricType": "FMR",
+                "analytics": {
+                  "internalScore": "2992.0"
+                }
+              },
+              {
+                "biometricType": "FIR",
+                "analytics": {
+                  "internalScore": "12481.0"
+                }
+              }
+            ]
+          },
+          {
+            "referenceId": "17265110890071220250901112123",
+            "analytics": {
+              "internalScore": "7231.0",
+              "rank": "1",
+              "adjudicationDetails": [
+                {
+                  "decision": "NO_HIT",
+                  "biometricDetails": [
+                    {
+                      "biometricType": "FACE",
+                      "operatorComment": "Demandeur | ID - 17265110890071320250901114003\nCandidat | ID - 17265110890071220250901112123\n\nLes portraits sont différents [NO_HIT] - 1_richard_poyodi"
+                    },
+                    {
+                      "biometricType": "FINGER",
+                      "operatorComment": "Les empreintes sont différentes [NO_HIT] - 1_richard_poyodi"
+                    },
+                    {
+                      "biometricType": "IRIS",
+                      "operatorComment": "Les iris sont identiques [NO_HIT] - 1_richard_poyodi"
+                    }
+                  ],
+                  "biographicComment": "Les données démographiques sont différentes.\nLe candidat et le demandeur sont issus de la même fratrie et ont le même tuteur / représentant légal [NO_HIT] - 1_richard_poyodi",
+                  "operator": "1_richard_poyodi"
+                }
+              ]
+            },
+            "modalities": [
+              {
+                "biometricType": "IIR",
+                "analytics": {
+                  "internalScore": "7469.0"
+                }
+              },
+              {
+                "biometricType": "FMR",
+                "analytics": {
+                  "internalScore": "6154.0"
+                }
+              },
+              {
+                "biometricType": "FIR",
+                "analytics": {
+                  "internalScore": "1051.0"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "BUSINESS_ID": "d95c394b-1e4f-4fda-8989-dc55c7a61fa7",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "c982f549-a30a-47d1-9be1-dc3f7eb56078",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "END",
+    "ACTIVITY_RESULT": "SUCCESS",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:56:26.763Z",
+    "DURATION": 10,
+    "RESPONSE_TIME": "2025-11-10T08:56:26.763562293",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 31,
+    "_raw": "{ \"BUSINESS_ID\":\"6d72149e-049d-49b6-bd06-d00313eefe91\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"51829c0d-ff72-4692-b4cd-fcb0f2b5c71e\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"START\",\"ACTIVITY_RESULT\":\"ACCEPTED\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:57:08.437Z\",\"DURATION\":0,\"REFERENCE_ID\":,\"mosip.version\":,\"REFERENCE_URL\":,\"OPERATION\":PUBLISH_RESPONSE_MESSAGE_TO_QUEUE,\"RETURN_VALUE\":1,\"ID\":mosip.manual.adjudication.adjudicate,\"REQUEST_ID\":6d72149e-049d-49b6-bd06-d00313eefe91,\"REQUEST_TIME\":,\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 330 (char 329)",
+    "BUSINESS_ID": "6d72149e-049d-49b6-bd06-d00313eefe91",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "51829c0d-ff72-4692-b4cd-fcb0f2b5c71e",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "START",
+    "ACTIVITY_RESULT": "ACCEPTED",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:57:08.437Z",
+    "DURATION": 0,
+    "OPERATION": "PUBLISH_RESPONSE_MESSAGE_TO_QUEUE",
+    "RETURN_VALUE": 1,
+    "ID": "mosip.manual.adjudication.adjudicate",
+    "REQUEST_ID": "6d72149e-049d-49b6-bd06-d00313eefe91",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 32,
+    "_raw": "{ \"BUSINESS_ID\":\"6d72149e-049d-49b6-bd06-d00313eefe91\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"51829c0d-ff72-4692-b4cd-fcb0f2b5c71e\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"END\",\"ACTIVITY_RESULT\":\"SUCCESS\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:57:08.447Z\",\"DURATION\":10,\"RESPONSE_TIME\":2025-11-10T08:57:08.446998825,\"RESPONSE_PUBLISHED_TO_MOSIP_QUEUE\":{\"id\":\"mosip.manual.adjudication.adjudicate\",\"requestId\":\"6d72149e-049d-49b6-bd06-d00313eefe91\",\"returnValue\":\"1\",\"responsetime\":\"2025-11-10T08:57:08.437284652Z\",\"candidateList\":{\"count\":\"0\",\"candidates\":[]},\"analytics\":{\"candidates\":[{\"referenceId\":\"17299100100027720250824093851\",\"analytics\":{\"internalScore\":\"12223.0\",\"rank\":\"1\",\"adjudicationDetails\":[{\"decision\":\"NO_HIT\",\"biometricDetails\":[{\"biometricType\":\"FACE\",\"operatorComment\":\"Demandeur | ID - 17299100100093320250830123125\\nCandidat | ID - 17299100100027720250824093851\\n\\nLes portraits sont différents [NO_HIT] - 1_jean-eudes_tchoou\"},{\"biometricType\":\"FINGER\",\"operatorComment\":\"Les empreintes sont identiques [NO_HIT] - 1_jean-eudes_tchoou\"},{\"biometricType\":\"IRIS\",\"operatorComment\":\"Les iris sont différents [NO_HIT] - 1_jean-eudes_tchoou\"}],\"biographicComment\":\"Il s'agit d'un mineur et de son tuteur / représentant légal [NO_HIT] - 1_jean-eudes_tchoou\",\"operator\":\"1_jean-eudes_tchoou\"}]},\"modalities\":[{\"biometricType\":\"IIR\",\"analytics\":{\"internalScore\":\"2144.0\"}},{\"biometricType\":\"FMR\",\"analytics\":{\"internalScore\":\"1319.0\"}},{\"biometricType\":\"FIR\",\"analytics\":{\"internalScore\":\"12461.0\"}}]},{\"referenceId\":\"17299100100093120250830122542\",\"analytics\":{\"internalScore\":\"14872.0\",\"rank\":\"1\",\"adjudicationDetails\":[{\"decision\":\"NO_HIT\",\"biometricDetails\":[{\"biometricType\":\"FACE\",\"operatorComment\":\"Demandeur | ID - 17299100100093320250830123125\\nCandidat | ID - 17299100100093120250830122542\\n\\nLes portraits sont différents [NO_HIT] - 1_jean-eudes_tchoou\"},{\"biometricType\":\"FINGER\",\"operatorComment\":\"Les empreintes sont identiques [NO_HIT] - 1_jean-eudes_tchoou\"},{\"biometricType\":\"IRIS\",\"operatorComment\":\"Les iris sont différents [NO_HIT] - 1_jean-eudes_tchoou\"}],\"biographicComment\":\"Le candidat et le demandeur sont issus de la même fratrie bien qu'une discordance\\nAction:\\nN/A [NO_HIT] - 1_jean-eudes_tchoou\",\"operator\":\"1_jean-eudes_tchoou\"}]},\"modalities\":[{\"biometricType\":\"IIR\",\"analytics\":{\"internalScore\":\"2305.0\"}},{\"biometricType\":\"FMR\",\"analytics\":{\"internalScore\":\"3548.0\"}},{\"biometricType\":\"FIR\",\"analytics\":{\"internalScore\":\"15110.0\"}}]}]}},\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 963 (char 962)",
+    "RESPONSE_PUBLISHED_TO_MOSIP_QUEUE": {
+      "id": "mosip.manual.adjudication.adjudicate",
+      "requestId": "6d72149e-049d-49b6-bd06-d00313eefe91",
+      "returnValue": "1",
+      "responsetime": "2025-11-10T08:57:08.437284652Z",
+      "candidateList": {
+        "count": "0",
+        "candidates": []
+      },
+      "analytics": {
+        "candidates": [
+          {
+            "referenceId": "17299100100027720250824093851",
+            "analytics": {
+              "internalScore": "12223.0",
+              "rank": "1",
+              "adjudicationDetails": [
+                {
+                  "decision": "NO_HIT",
+                  "biometricDetails": [
+                    {
+                      "biometricType": "FACE",
+                      "operatorComment": "Demandeur | ID - 17299100100093320250830123125\nCandidat | ID - 17299100100027720250824093851\n\nLes portraits sont différents [NO_HIT] - 1_jean-eudes_tchoou"
+                    },
+                    {
+                      "biometricType": "FINGER",
+                      "operatorComment": "Les empreintes sont identiques [NO_HIT] - 1_jean-eudes_tchoou"
+                    },
+                    {
+                      "biometricType": "IRIS",
+                      "operatorComment": "Les iris sont différents [NO_HIT] - 1_jean-eudes_tchoou"
+                    }
+                  ],
+                  "biographicComment": "Il s'agit d'un mineur et de son tuteur / représentant légal [NO_HIT] - 1_jean-eudes_tchoou",
+                  "operator": "1_jean-eudes_tchoou"
+                }
+              ]
+            },
+            "modalities": [
+              {
+                "biometricType": "IIR",
+                "analytics": {
+                  "internalScore": "2144.0"
+                }
+              },
+              {
+                "biometricType": "FMR",
+                "analytics": {
+                  "internalScore": "1319.0"
+                }
+              },
+              {
+                "biometricType": "FIR",
+                "analytics": {
+                  "internalScore": "12461.0"
+                }
+              }
+            ]
+          },
+          {
+            "referenceId": "17299100100093120250830122542",
+            "analytics": {
+              "internalScore": "14872.0",
+              "rank": "1",
+              "adjudicationDetails": [
+                {
+                  "decision": "NO_HIT",
+                  "biometricDetails": [
+                    {
+                      "biometricType": "FACE",
+                      "operatorComment": "Demandeur | ID - 17299100100093320250830123125\nCandidat | ID - 17299100100093120250830122542\n\nLes portraits sont différents [NO_HIT] - 1_jean-eudes_tchoou"
+                    },
+                    {
+                      "biometricType": "FINGER",
+                      "operatorComment": "Les empreintes sont identiques [NO_HIT] - 1_jean-eudes_tchoou"
+                    },
+                    {
+                      "biometricType": "IRIS",
+                      "operatorComment": "Les iris sont différents [NO_HIT] - 1_jean-eudes_tchoou"
+                    }
+                  ],
+                  "biographicComment": "Le candidat et le demandeur sont issus de la même fratrie bien qu'une discordance\nAction:\nN/A [NO_HIT] - 1_jean-eudes_tchoou",
+                  "operator": "1_jean-eudes_tchoou"
+                }
+              ]
+            },
+            "modalities": [
+              {
+                "biometricType": "IIR",
+                "analytics": {
+                  "internalScore": "2305.0"
+                }
+              },
+              {
+                "biometricType": "FMR",
+                "analytics": {
+                  "internalScore": "3548.0"
+                }
+              },
+              {
+                "biometricType": "FIR",
+                "analytics": {
+                  "internalScore": "15110.0"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "BUSINESS_ID": "6d72149e-049d-49b6-bd06-d00313eefe91",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "51829c0d-ff72-4692-b4cd-fcb0f2b5c71e",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "END",
+    "ACTIVITY_RESULT": "SUCCESS",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:57:08.447Z",
+    "DURATION": 10,
+    "RESPONSE_TIME": "2025-11-10T08:57:08.446998825",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 33,
+    "_raw": "{ \"BUSINESS_ID\":\"f536932c-8f0f-4d09-b1ef-fd81f838e1b6\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"142c755a-fcf6-4ef6-aaf9-4cc892b40c84\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"START\",\"ACTIVITY_RESULT\":\"ACCEPTED\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:59:12.943Z\",\"DURATION\":0,\"REFERENCE_ID\":,\"mosip.version\":,\"REFERENCE_URL\":,\"OPERATION\":PUBLISH_RESPONSE_MESSAGE_TO_QUEUE,\"RETURN_VALUE\":1,\"ID\":mosip.manual.adjudication.adjudicate,\"REQUEST_ID\":f536932c-8f0f-4d09-b1ef-fd81f838e1b6,\"REQUEST_TIME\":,\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 330 (char 329)",
+    "BUSINESS_ID": "f536932c-8f0f-4d09-b1ef-fd81f838e1b6",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "142c755a-fcf6-4ef6-aaf9-4cc892b40c84",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "START",
+    "ACTIVITY_RESULT": "ACCEPTED",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:59:12.943Z",
+    "DURATION": 0,
+    "OPERATION": "PUBLISH_RESPONSE_MESSAGE_TO_QUEUE",
+    "RETURN_VALUE": 1,
+    "ID": "mosip.manual.adjudication.adjudicate",
+    "REQUEST_ID": "f536932c-8f0f-4d09-b1ef-fd81f838e1b6",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 34,
+    "_raw": "{ \"BUSINESS_ID\":\"f536932c-8f0f-4d09-b1ef-fd81f838e1b6\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"142c755a-fcf6-4ef6-aaf9-4cc892b40c84\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"END\",\"ACTIVITY_RESULT\":\"SUCCESS\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:59:12.952Z\",\"DURATION\":9,\"RESPONSE_TIME\":2025-11-10T08:59:12.952175667,\"RESPONSE_PUBLISHED_TO_MOSIP_QUEUE\":{\"id\":\"mosip.manual.adjudication.adjudicate\",\"requestId\":\"f536932c-8f0f-4d09-b1ef-fd81f838e1b6\",\"returnValue\":\"1\",\"responsetime\":\"2025-11-10T08:59:12.943020178Z\",\"candidateList\":{\"count\":\"0\",\"candidates\":[]},\"analytics\":{\"candidates\":[{\"referenceId\":\"17152110240081120250726112901\",\"analytics\":{\"internalScore\":\"13300.0\",\"rank\":\"1\",\"adjudicationDetails\":[{\"decision\":\"NO_HIT\",\"biometricDetails\":[{\"biometricType\":\"FACE\",\"operatorComment\":\"Demandeur | ID - 17377111910053420250903111717\\nCandidat | ID - 17152110240081120250726112901\\n\\nLes portraits sont différents [NO_HIT] - 1_richard_poyodi\"},{\"biometricType\":\"FINGER\",\"operatorComment\":\"Les empreintes sont identiques [NO_HIT] - 1_richard_poyodi\"},{\"biometricType\":\"IRIS\",\"operatorComment\":\"Les iris sont différents [NO_HIT] - 1_richard_poyodi\"}],\"biographicComment\":\"Les données démographiques sont différentes.\\nIl s'agit d'un parent et de son enfant. [NO_HIT] - 1_richard_poyodi\",\"operator\":\"1_richard_poyodi\"}]},\"modalities\":[{\"biometricType\":\"IIR\",\"analytics\":{\"internalScore\":\"2241.0\"}},{\"biometricType\":\"FMR\",\"analytics\":{\"internalScore\":\"2219.0\"}},{\"biometricType\":\"FIR\",\"analytics\":{\"internalScore\":\"13538.0\"}}]}]}},\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 962 (char 961)",
+    "RESPONSE_PUBLISHED_TO_MOSIP_QUEUE": {
+      "id": "mosip.manual.adjudication.adjudicate",
+      "requestId": "f536932c-8f0f-4d09-b1ef-fd81f838e1b6",
+      "returnValue": "1",
+      "responsetime": "2025-11-10T08:59:12.943020178Z",
+      "candidateList": {
+        "count": "0",
+        "candidates": []
+      },
+      "analytics": {
+        "candidates": [
+          {
+            "referenceId": "17152110240081120250726112901",
+            "analytics": {
+              "internalScore": "13300.0",
+              "rank": "1",
+              "adjudicationDetails": [
+                {
+                  "decision": "NO_HIT",
+                  "biometricDetails": [
+                    {
+                      "biometricType": "FACE",
+                      "operatorComment": "Demandeur | ID - 17377111910053420250903111717\nCandidat | ID - 17152110240081120250726112901\n\nLes portraits sont différents [NO_HIT] - 1_richard_poyodi"
+                    },
+                    {
+                      "biometricType": "FINGER",
+                      "operatorComment": "Les empreintes sont identiques [NO_HIT] - 1_richard_poyodi"
+                    },
+                    {
+                      "biometricType": "IRIS",
+                      "operatorComment": "Les iris sont différents [NO_HIT] - 1_richard_poyodi"
+                    }
+                  ],
+                  "biographicComment": "Les données démographiques sont différentes.\nIl s'agit d'un parent et de son enfant. [NO_HIT] - 1_richard_poyodi",
+                  "operator": "1_richard_poyodi"
+                }
+              ]
+            },
+            "modalities": [
+              {
+                "biometricType": "IIR",
+                "analytics": {
+                  "internalScore": "2241.0"
+                }
+              },
+              {
+                "biometricType": "FMR",
+                "analytics": {
+                  "internalScore": "2219.0"
+                }
+              },
+              {
+                "biometricType": "FIR",
+                "analytics": {
+                  "internalScore": "13538.0"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "BUSINESS_ID": "f536932c-8f0f-4d09-b1ef-fd81f838e1b6",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "142c755a-fcf6-4ef6-aaf9-4cc892b40c84",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "END",
+    "ACTIVITY_RESULT": "SUCCESS",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:59:12.952Z",
+    "DURATION": 9,
+    "RESPONSE_TIME": "2025-11-10T08:59:12.952175667",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 35,
+    "_raw": "{ \"BUSINESS_ID\":\"4ebd99d7-9f79-4dad-971b-98e0af38337e\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"ad5df80e-3c31-4bd0-9a08-fad8da168aa9\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"START\",\"ACTIVITY_RESULT\":\"ACCEPTED\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:59:45.341Z\",\"DURATION\":0,\"REFERENCE_ID\":,\"mosip.version\":,\"REFERENCE_URL\":,\"OPERATION\":PUBLISH_RESPONSE_MESSAGE_TO_QUEUE,\"RETURN_VALUE\":1,\"ID\":mosip.manual.adjudication.adjudicate,\"REQUEST_ID\":4ebd99d7-9f79-4dad-971b-98e0af38337e,\"REQUEST_TIME\":,\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 330 (char 329)",
+    "BUSINESS_ID": "4ebd99d7-9f79-4dad-971b-98e0af38337e",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "ad5df80e-3c31-4bd0-9a08-fad8da168aa9",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "START",
+    "ACTIVITY_RESULT": "ACCEPTED",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:59:45.341Z",
+    "DURATION": 0,
+    "OPERATION": "PUBLISH_RESPONSE_MESSAGE_TO_QUEUE",
+    "RETURN_VALUE": 1,
+    "ID": "mosip.manual.adjudication.adjudicate",
+    "REQUEST_ID": "4ebd99d7-9f79-4dad-971b-98e0af38337e",
+    "DUMMY": ""
+  },
+  {
+    "_start_line": 36,
+    "_raw": "{ \"BUSINESS_ID\":\"4ebd99d7-9f79-4dad-971b-98e0af38337e\",\"ORIGIN\":\"MIDDLEWARE\",\"ORIGIN_ID\":\"ad5df80e-3c31-4bd0-9a08-fad8da168aa9\",\"LOG_CATEGORY\":\"BUSINESS\",\"SERVICE\":\"ADJUDICATION\",\"ACTIVITY\":\"END\",\"ACTIVITY_RESULT\":\"SUCCESS\",\"OWNER\":\"brsadmin\",\"HOST\":\"brs1\",\"TIMESTAMP\":\"2025-11-10T08:59:45.350Z\",\"DURATION\":9,\"RESPONSE_TIME\":2025-11-10T08:59:45.350632553,\"RESPONSE_PUBLISHED_TO_MOSIP_QUEUE\":{\"id\":\"mosip.manual.adjudication.adjudicate\",\"requestId\":\"4ebd99d7-9f79-4dad-971b-98e0af38337e\",\"returnValue\":\"1\",\"responsetime\":\"2025-11-10T08:59:45.341281722Z\",\"candidateList\":{\"count\":\"0\",\"candidates\":[]},\"analytics\":{\"candidates\":[{\"referenceId\":\"17271102020427720250913090352\",\"analytics\":{\"internalScore\":\"17834.0\",\"rank\":\"1\",\"adjudicationDetails\":[{\"decision\":\"NO_HIT\",\"biometricDetails\":[{\"biometricType\":\"FACE\",\"operatorComment\":\"Demandeur | ID - 17271102030301220250901121047\\nCandidat | ID - 17271102020427720250913090352\\n\\nLes portraits sont différents [NO_HIT] - 1_ismail_maiba\"},{\"biometricType\":\"FINGER\",\"operatorComment\":\"Les empreintes sont différentes [NO_HIT] - 1_ismail_maiba\"},{\"biometricType\":\"IRIS\",\"operatorComment\":\"Les iris sont identiques [NO_HIT] - 1_ismail_maiba\"}],\"biographicComment\":\"Les données démographiques sont différentes\\nIl s'agit d'un mineur et de son tuteur / représentant légal. [NO_HIT] - 1_ismail_maiba\",\"operator\":\"1_ismail_maiba\"}]},\"modalities\":[{\"biometricType\":\"IIR\",\"analytics\":{\"internalScore\":\"18072.0\"}},{\"biometricType\":\"FMR\",\"analytics\":{\"internalScore\":\"1982.0\"}},{\"biometricType\":\"FIR\",\"analytics\":{\"internalScore\":\"1103.0\"}}]}]}},\"DUMMY\":\"\"}",
+    "_parse_error": "Expecting ',' delimiter: line 1 column 962 (char 961)",
+    "RESPONSE_PUBLISHED_TO_MOSIP_QUEUE": {
+      "id": "mosip.manual.adjudication.adjudicate",
+      "requestId": "4ebd99d7-9f79-4dad-971b-98e0af38337e",
+      "returnValue": "1",
+      "responsetime": "2025-11-10T08:59:45.341281722Z",
+      "candidateList": {
+        "count": "0",
+        "candidates": []
+      },
+      "analytics": {
+        "candidates": [
+          {
+            "referenceId": "17271102020427720250913090352",
+            "analytics": {
+              "internalScore": "17834.0",
+              "rank": "1",
+              "adjudicationDetails": [
+                {
+                  "decision": "NO_HIT",
+                  "biometricDetails": [
+                    {
+                      "biometricType": "FACE",
+                      "operatorComment": "Demandeur | ID - 17271102030301220250901121047\nCandidat | ID - 17271102020427720250913090352\n\nLes portraits sont différents [NO_HIT] - 1_ismail_maiba"
+                    },
+                    {
+                      "biometricType": "FINGER",
+                      "operatorComment": "Les empreintes sont différentes [NO_HIT] - 1_ismail_maiba"
+                    },
+                    {
+                      "biometricType": "IRIS",
+                      "operatorComment": "Les iris sont identiques [NO_HIT] - 1_ismail_maiba"
+                    }
+                  ],
+                  "biographicComment": "Les données démographiques sont différentes\nIl s'agit d'un mineur et de son tuteur / représentant légal. [NO_HIT] - 1_ismail_maiba",
+                  "operator": "1_ismail_maiba"
+                }
+              ]
+            },
+            "modalities": [
+              {
+                "biometricType": "IIR",
+                "analytics": {
+                  "internalScore": "18072.0"
+                }
+              },
+              {
+                "biometricType": "FMR",
+                "analytics": {
+                  "internalScore": "1982.0"
+                }
+              },
+              {
+                "biometricType": "FIR",
+                "analytics": {
+                  "internalScore": "1103.0"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "BUSINESS_ID": "4ebd99d7-9f79-4dad-971b-98e0af38337e",
+    "ORIGIN": "MIDDLEWARE",
+    "ORIGIN_ID": "ad5df80e-3c31-4bd0-9a08-fad8da168aa9",
+    "LOG_CATEGORY": "BUSINESS",
+    "SERVICE": "ADJUDICATION",
+    "ACTIVITY": "END",
+    "ACTIVITY_RESULT": "SUCCESS",
+    "OWNER": "brsadmin",
+    "HOST": "brs1",
+    "TIMESTAMP": "2025-11-10T08:59:45.350Z",
+    "DURATION": 9,
+    "RESPONSE_TIME": "2025-11-10T08:59:45.350632553",
+    "DUMMY": ""
+  }
+]
