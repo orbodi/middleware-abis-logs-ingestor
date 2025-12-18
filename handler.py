@@ -27,7 +27,7 @@ from .service import persist_all_json_to_db
 from .files.gzip_processing import decompress_audit_gz_in_inputs
 
 
-_AUDITLOG_DATE_RE = re.compile(r"auditlog-(\d{4}-\d{2}-\d{2})_")
+_AUDITLOG_DATE_RE = re.compile(r"(?:.*-)?auditlog-(\d{4}-\d{2}-\d{2})_")
 
 
 def _extract_date_folder(name: str) -> str:

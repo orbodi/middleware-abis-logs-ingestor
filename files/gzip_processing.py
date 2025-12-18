@@ -2,12 +2,14 @@ from __future__ import annotations
 
 import gzip
 import shutil
+import sys
+import zlib
 from pathlib import Path
 from typing import List
 import re
 
 
-_AUDITLOG_DATE_RE = re.compile(r"auditlog-(\d{4}-\d{2}-\d{2})_")
+_AUDITLOG_DATE_RE = re.compile(r"(?:.*-)?auditlog-(\d{4}-\d{2}-\d{2})_")
 
 
 def _extract_date_folder(name: str) -> str:
@@ -54,13 +56,28 @@ def decompress_audit_gz_in_inputs(inputs_dir: Path, backups_root: Path | None = 
         target_log_path = processing_dir / log_name
 
         # Décompresser uniquement si le .log n'existe pas déjà
+        decompression_success = False
         if not target_log_path.exists():
-            with gzip.open(gz_path, "rb") as f_in, open(target_log_path, "wb") as f_out:
-                shutil.copyfileobj(f_in, f_out)
-            created_logs.append(target_log_path)
+            try:
+                with gzip.open(gz_path, "rb") as f_in, open(
+                    target_log_path, "wb"
+                ) as f_out:
+                    shutil.copyfileobj(f_in, f_out)
+                decompression_success = True
+                created_logs.append(target_log_path)
+            except (OSError, gzip.BadGzipFile, zlib.error, Exception) as exc:
+                # Fichier .gz invalide ou corrompu : on le signale et on passe au suivant
+                print(
+                    f"⚠️  Impossible de décompresser {gz_path.name}: {type(exc).__name__} - {exc}",
+                    file=sys.stderr,
+                )
+                # Ne pas ajouter ce .log dans created_logs
+                # et ne pas déplacer le .gz en backup pour qu'il reste visible
+                continue
 
         # Sauvegarder le fichier .gz dans un dossier de backup daté, si demandé
-        if backups_root is not None:
+        # (uniquement si la décompression a réussi ou si le .log existe déjà)
+        if backups_root is not None and (decompression_success or target_log_path.exists()):
             date_folder = _extract_date_folder(gz_path.name)
             backup_dir = backups_root / date_folder
             backup_dir.mkdir(parents=True, exist_ok=True)
