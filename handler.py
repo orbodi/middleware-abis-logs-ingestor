@@ -167,6 +167,7 @@ def main(argv: List[str] | None = None) -> None:
     errors_dir = storage_root / env.get("ERRORS_SUBDIR", "errors")
     logs_dir = storage_root / env.get("LOGS_SUBDIR", "logs")
     json_data_dir = storage_root / env.get("JSON_DATA_SUBDIR", "json_data")
+    backups_dir = storage_root / env.get("BACKUPS_SUBDIR", "backups")
 
     # Sous-dossiers d'archives dédiés (racines)
     archive_inputs_dir = archive_dir / "inputs"
@@ -180,13 +181,14 @@ def main(argv: List[str] | None = None) -> None:
     errors_dir.mkdir(parents=True, exist_ok=True)
     logs_dir.mkdir(parents=True, exist_ok=True)
     json_data_dir.mkdir(parents=True, exist_ok=True)
+    backups_dir.mkdir(parents=True, exist_ok=True)
 
     # Dossier de travail pour les logs décompressés
     processing_dir = inputs_dir / "processing_data"
     processing_dir.mkdir(parents=True, exist_ok=True)
 
-    # Décompresser les fichiers auditlog-*.log.gz vers processing_data
-    created_logs = decompress_audit_gz_in_inputs(inputs_dir)
+    # Décompresser les fichiers *.log.gz vers processing_data et sauvegarder les .gz
+    created_logs = decompress_audit_gz_in_inputs(inputs_dir, backups_dir)
     if created_logs:
         print(f"🗜️  {len(created_logs)} fichier(s) .gz décompressé(s) dans {processing_dir}")
 
