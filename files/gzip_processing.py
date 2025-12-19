@@ -5,7 +5,7 @@ import shutil
 import sys
 import zlib
 from pathlib import Path
-from typing import List
+from typing import List, Tuple
 import re
 
 
@@ -26,7 +26,7 @@ def _extract_date_folder(name: str) -> str:
     return datetime.now().strftime("%Y%m%d")
 
 
-def decompress_audit_gz_in_inputs(inputs_dir: Path, backups_root: Path | None = None) -> List[Path]:
+def decompress_audit_gz_in_inputs(inputs_dir: Path, backups_root: Path | None = None) -> Tuple[List[Path], int]:
     """
     Parcourt le dossier `inputs_dir`, trouve les fichiers
     de type `auditlog-*.log.gz`, les décompresse et place
@@ -39,15 +39,17 @@ def decompress_audit_gz_in_inputs(inputs_dir: Path, backups_root: Path | None = 
 
     Args:
         inputs_dir: chemin du dossier `inputs` (racine des fichiers à traiter).
+        backups_root: chemin du dossier racine pour les backups (optionnel).
 
     Returns:
-        Liste des chemins des fichiers `.log` créés dans `processing_data`.
+        Tuple (liste des chemins des fichiers `.log` créés, nombre d'erreurs).
     """
     inputs_dir = inputs_dir.resolve()
     processing_dir = inputs_dir / "processing_data"
     processing_dir.mkdir(parents=True, exist_ok=True)
 
     created_logs: List[Path] = []
+    error_count = 0
 
     # On prend tous les fichiers *.log.gz présents dans inputs_dir
     for gz_path in sorted(inputs_dir.glob("*.log.gz")):
@@ -71,6 +73,7 @@ def decompress_audit_gz_in_inputs(inputs_dir: Path, backups_root: Path | None = 
                     f"⚠️  Impossible de décompresser {gz_path.name}: {type(exc).__name__} - {exc}",
                     file=sys.stderr,
                 )
+                error_count += 1
                 # Ne pas ajouter ce .log dans created_logs
                 # et ne pas déplacer le .gz en backup pour qu'il reste visible
                 continue
@@ -85,6 +88,6 @@ def decompress_audit_gz_in_inputs(inputs_dir: Path, backups_root: Path | None = 
             if not target_gz.exists():
                 gz_path.replace(target_gz)
 
-    return created_logs
+    return created_logs, error_count
 
 

@@ -168,6 +168,9 @@ def main(argv: List[str] | None = None) -> None:
     logs_dir = storage_root / env.get("LOGS_SUBDIR", "logs")
     json_data_dir = storage_root / env.get("JSON_DATA_SUBDIR", "json_data")
     backups_dir = storage_root / env.get("BACKUPS_SUBDIR", "backups")
+    enable_decompression = (
+        str(env.get("ENABLE_DECOMPRESSION", "true")).lower() in ("1", "true", "yes")
+    )
 
     # Sous-dossiers d'archives dédiés (racines)
     archive_inputs_dir = archive_dir / "inputs"
@@ -183,14 +186,29 @@ def main(argv: List[str] | None = None) -> None:
     json_data_dir.mkdir(parents=True, exist_ok=True)
     backups_dir.mkdir(parents=True, exist_ok=True)
 
-    # Dossier de travail pour les logs décompressés
+    # Dossier de travail pour les logs à parser
     processing_dir = inputs_dir / "processing_data"
     processing_dir.mkdir(parents=True, exist_ok=True)
 
-    # Décompresser les fichiers *.log.gz vers processing_data et sauvegarder les .gz
-    created_logs = decompress_audit_gz_in_inputs(inputs_dir, backups_dir)
-    if created_logs:
-        print(f"🗜️  {len(created_logs)} fichier(s) .gz décompressé(s) dans {processing_dir}")
+    # Optionnel : décompresser les fichiers *.log.gz vers processing_data et sauvegarder les .gz
+    if enable_decompression:
+        created_logs, decompress_errors = decompress_audit_gz_in_inputs(
+            inputs_dir, backups_dir
+        )
+        if created_logs:
+            print(
+                f"🗜️  {len(created_logs)} fichier(s) .gz décompressé(s) dans {processing_dir}"
+            )
+        if decompress_errors > 0:
+            print(
+                f"⚠️  {decompress_errors} fichier(s) .gz invalide(s) ou corrompu(s) (non décompressés)",
+                file=sys.stderr,
+            )
+    else:
+        print(
+            "ℹ️  Étape de décompression ignorée (ENABLE_DECOMPRESSION=false) – lecture directe de processing_data",
+            file=sys.stderr,
+        )
 
     # Mode 1 : un fichier explicite passé en argument
     if args.input_log is not None:
