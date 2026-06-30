@@ -7,8 +7,8 @@ Ingestion de fichiers de logs ABIS (ex: auditlog_brs1.log), normalisation en JSO
 et génération de fichiers de sortie exploitables pour l'analyse.
 
 Ce module expose une fonction principale `main()` utilisable :
-- en ligne de commande : `python -m projets.abis-logs-ingestor.handler ...`
-- ou directement : `python handler.py ...` si exécuté depuis ce dossier.
+- en ligne de commande : `python3 run.py` (recommandé)
+- ou : `python3 -m abis_logs_ingestor.handler` depuis le dossier parent
 """
 
 from __future__ import annotations

@@ -73,11 +73,25 @@ python db_scripts/init_db.py
    - logs bruts `auditlog-YYYY-MM-DD_HH.0.log`
    - ou archives `auditlog-YYYY-MM-DD_HH.0.log.gz` (elles seront décompressées dans `inputs/processing_data`)
 
-2. Lancer l'ingestion (depuis `projets/abis_logs_ingestor`) :
+2. Lancer l'ingestion (depuis le dossier du projet) :
 
 ```bash
-python -m abis_logs_ingestor.handler
+python3 run.py
+# ou
+bin/run
 ```
+
+Variantes :
+
+```bash
+python3 run.py --no-cleanup
+python3 run.py /chemin/vers/auditlog.log
+python3 db_scripts/init_db.py
+python3 run_cleanup.py
+```
+
+> **Ne pas utiliser** `python3 -m handler` — `handler.py` est un module interne du package.
+> Si le dossier s'appelle autrement que `abis_logs_ingestor`, préférez `python3 run.py`.
 
 Le handler :
 - décompresse les `.gz` vers `inputs/processing_data`,
