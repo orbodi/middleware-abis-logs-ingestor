@@ -69,9 +69,9 @@ python db_scripts/init_db.py
 
 ### Utilisation
 
-1. Déposer les fichiers dans `storage/inputs` :
+1. Déposer les fichiers dans `ROOT_DIR/inputs/` :
    - logs bruts `auditlog-YYYY-MM-DD_HH.0.log`
-   - ou archives `auditlog-YYYY-MM-DD_HH.0.log.gz` (elles seront décompressées dans `inputs/processing_data`)
+   - ou archives `auditlog-YYYY-MM-DD_HH.0.log.gz` (décompressées dans `inputs/`)
 
 2. Lancer l'ingestion (depuis le dossier du projet) :
 
@@ -94,8 +94,8 @@ python3 run_cleanup.py
 > Si le dossier s'appelle autrement que `abis_logs_ingestor`, préférez `python3 run.py`.
 
 Le handler :
-- décompresse les `.gz` vers `inputs/processing_data`,
-- parse chaque `.log`,
+- décompresse les `.gz` dans `inputs/`,
+- parse chaque `.log` présent dans `inputs/`,
 - écrit les JSON dans `storage/json_data`,
 - archive les logs et JSON par date dans `storage/archives/...`,
 - persiste les JSON en base (table `{DB_SCHEMA}.events`, défaut `abis.events`).

@@ -62,8 +62,8 @@ def layout_from_env(env: Dict[str, str], project_root: Path) -> StorageLayout:
     Dérive l'arborescence à partir de ROOT_DIR (ou STORAGE_DIR en fallback).
 
     Arborescence créée sous ROOT_DIR :
-        inputs/              ← .log.gz (entrée, ex. depuis logspipe-relay)
-        inputs/processing_data/  ← .log à parser
+        inputs/              ← .log et .log.gz à traiter (ex. depuis logspipe-relay)
+        inputs/processing_data/  ← legacy (encore lu si des .log y restent)
         json_data/
         archives/inputs/
         archives/json_data/

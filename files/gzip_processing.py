@@ -30,22 +30,20 @@ def decompress_audit_gz_in_inputs(inputs_dir: Path, backups_root: Path | None = 
     """
     Parcourt le dossier `inputs_dir`, trouve les fichiers
     de type `auditlog-*.log.gz`, les décompresse et place
-    les fichiers `.log` résultants dans le sous-dossier
-    `processing_data` de `inputs_dir`.
+    les fichiers `.log` résultants dans le même dossier `inputs_dir`.
 
     Exemple :
         inputs/
-          auditlog-2025-11-10_07.0.log.gz  →  inputs/processing_data/auditlog-2025-11-10_07.0.log
+          auditlog-2025-11-10_07.0.log.gz  →  inputs/auditlog-2025-11-10_07.0.log
 
     Args:
         inputs_dir: chemin du dossier `inputs` (racine des fichiers à traiter).
 
     Returns:
-        Liste des chemins des fichiers `.log` créés dans `processing_data`.
+        Liste des chemins des fichiers `.log` créés dans `inputs_dir`.
     """
     inputs_dir = inputs_dir.resolve()
-    processing_dir = inputs_dir / "processing_data"
-    processing_dir.mkdir(parents=True, exist_ok=True)
+    inputs_dir.mkdir(parents=True, exist_ok=True)
 
     created_logs: List[Path] = []
 
@@ -53,7 +51,7 @@ def decompress_audit_gz_in_inputs(inputs_dir: Path, backups_root: Path | None = 
     for gz_path in sorted(inputs_dir.glob("*.log.gz")):
         # Nom du fichier .log à l'intérieur (on retire seulement le suffixe .gz)
         log_name = gz_path.name[:-3]  # supprime le suffixe ".gz"
-        target_log_path = processing_dir / log_name
+        target_log_path = inputs_dir / log_name
 
         # Décompresser uniquement si le .log n'existe pas déjà
         decompression_success = False

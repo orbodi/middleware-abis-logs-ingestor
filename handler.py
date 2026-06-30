@@ -33,6 +33,23 @@ from .db_config import maybe_initialize_database
 _AUDITLOG_DATE_RE = re.compile(r"(?:.*-)?auditlog-(\d{4}-\d{2}-\d{2})_")
 
 
+def _iter_pending_logs(inputs_dir: Path, processing_dir: Path) -> List[Path]:
+    """
+    Fichiers *.log à traiter : inputs/ (ex. logspipe-relay) puis processing_data/ (legacy).
+    """
+    seen: set[str] = set()
+    pending: List[Path] = []
+    for directory in (inputs_dir, processing_dir):
+        if not directory.is_dir():
+            continue
+        for path in sorted(directory.glob("*.log")):
+            if path.name in seen:
+                continue
+            seen.add(path.name)
+            pending.append(path)
+    return pending
+
+
 def _extract_date_folder(name: str) -> str:
     """
     Extrait une date (YYYYMMDD) à partir d'un nom de fichier de type
@@ -172,10 +189,10 @@ def main(argv: List[str] | None = None) -> None:
     json_data_dir = layout.json_data_dir
     backups_dir = layout.backups_dir
 
-    # Décompresser les fichiers *.log.gz vers processing_data et sauvegarder les .gz
+    # Décompresser les *.log.gz dans inputs/ et sauvegarder les .gz
     created_logs = decompress_audit_gz_in_inputs(inputs_dir, backups_dir)
     if created_logs:
-        print(f"🗜️  {len(created_logs)} fichier(s) .gz décompressé(s) dans {processing_dir}")
+        print(f"🗜️  {len(created_logs)} fichier(s) .gz décompressé(s) dans {inputs_dir}")
 
     # Mode 1 : un fichier explicite passé en argument
     if args.input_log is not None:
@@ -221,13 +238,13 @@ def main(argv: List[str] | None = None) -> None:
             _print_cleanup_summary(run_cleanup(layout, cleanup_config))
         return
 
-    # Mode 2 : batch sur le dossier d'inputs (storage/inputs/processing_data)
-    if not processing_dir.is_dir():
-        print(f"✗ Dossier de travail introuvable : {processing_dir}", file=sys.stderr)
+    # Mode 2 : batch sur ROOT_DIR/inputs/*.log
+    if not inputs_dir.is_dir():
+        print(f"✗ Dossier d'inputs introuvable : {inputs_dir}", file=sys.stderr)
         sys.exit(1)
 
     any_file = False
-    for input_log in sorted(processing_dir.glob("*.log")):
+    for input_log in _iter_pending_logs(inputs_dir, processing_dir):
         any_file = True
         # Déterminer le sous-dossier daté à partir du nom du fichier
         date_folder = _extract_date_folder(input_log.name)
@@ -265,7 +282,7 @@ def main(argv: List[str] | None = None) -> None:
             persist_all_json_to_db(skip_init=True)
         else:
             print(
-                f"ℹ️  Aucun fichier *.log trouvé dans {processing_dir} "
+                f"ℹ️  Aucun fichier *.log trouvé dans {inputs_dir} "
                 f"et aucun JSON en attente dans {json_data_dir}"
             )
     else:
