@@ -6,8 +6,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, Iterator, List, Tuple
 
-from disk import get_available_gb
-from storage import StorageLayout
+from .disk import get_available_gb
+from .storage import StorageLayout
 
 _AGE_TARGETS = (
     ("archives_inputs", "archives/inputs", "tree"),
