@@ -25,6 +25,9 @@ import re
 from .parser.build_full_json import process_content
 from .service import persist_all_json_to_db
 from .files.gzip_processing import decompress_audit_gz_in_inputs
+from .storage import ensure_storage_layout, layout_from_env, load_env
+from .cleanup import cleanup_config_from_env, run_cleanup, run_disk_cleanup_only
+from .db_config import maybe_initialize_database
 
 
 _AUDITLOG_DATE_RE = re.compile(r"(?:.*-)?auditlog-(\d{4}-\d{2}-\d{2})_")
@@ -43,27 +46,6 @@ def _extract_date_folder(name: str) -> str:
     return datetime.now().strftime("%Y%m%d")
 
 
-def load_env(env_path: Path) -> Dict[str, str]:
-    """
-    Charge un fichier .env très simple : lignes KEY=VALUE, ignore les commentaires.
-    Les variables existantes dans l'environnement système restent prioritaires.
-    """
-    env: Dict[str, str] = {}
-    if env_path.is_file():
-        for line in env_path.read_text(encoding="utf-8").splitlines():
-            line = line.strip()
-            if not line or line.startswith("#"):
-                continue
-            if "=" not in line:
-                continue
-            key, value = line.split("=", 1)
-            env[key.strip()] = value.strip()
-    # Compléter avec les variables d'environnement existantes
-    merged = {**env}
-    merged.update(os.environ)
-    return merged
-
-
 def parse_args(argv: List[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         prog="abis-logs-ingestor",
@@ -78,6 +60,12 @@ def parse_args(argv: List[str] | None = None) -> argparse.Namespace:
         type=Path,
         nargs="?",
         help="(Optionnel) Chemin d'un fichier de log brut à traiter directement.",
+    )
+
+    parser.add_argument(
+        "--no-cleanup",
+        action="store_true",
+        help="Ne pas executer le nettoyage (age + espace disque).",
     )
 
     return parser.parse_args(argv)
@@ -150,42 +138,39 @@ def write_outputs(
     stats_log.write_text("\n".join(lines), encoding="utf-8")
 
 
+def _print_cleanup_summary(stats: Dict[str, Any]) -> None:
+    age = stats.get("age") or {}
+    disk = stats.get("disk") or {}
+    age_deleted = sum(s.get("deleted", 0) for s in age.values() if isinstance(s, dict))
+    disk_deleted = disk.get("deleted", 0) if isinstance(disk, dict) else 0
+    if age_deleted or disk_deleted:
+        print(
+            f"Cleanup: {age_deleted + disk_deleted} file(s) deleted "
+            f"(age: {age_deleted}, disk: {disk_deleted})"
+        )
+
+
 def main(argv: List[str] | None = None) -> None:
     args = parse_args(argv)
 
     base_dir = Path(__file__).resolve().parent
     env = load_env(base_dir / ".env")
+    maybe_initialize_database(base_dir, env)
+    layout = layout_from_env(env, base_dir)
+    ensure_storage_layout(layout)
+    cleanup_config = cleanup_config_from_env(env)
 
-    # Racine de stockage (par défaut: ./storage)
-    storage_root = Path(env.get("STORAGE_DIR", "storage"))
-    if not storage_root.is_absolute():
-        storage_root = base_dir / storage_root
+    if not args.no_cleanup:
+        run_disk_cleanup_only(layout, cleanup_config)
 
-    # Sous-dossiers configurables (noms de répertoires)
-    inputs_dir = storage_root / env.get("INPUTS_SUBDIR", "inputs")
-    archive_dir = storage_root / env.get("ARCHIVES_SUBDIR", "archives")
-    errors_dir = storage_root / env.get("ERRORS_SUBDIR", "errors")
-    logs_dir = storage_root / env.get("LOGS_SUBDIR", "logs")
-    json_data_dir = storage_root / env.get("JSON_DATA_SUBDIR", "json_data")
-    backups_dir = storage_root / env.get("BACKUPS_SUBDIR", "backups")
-
-    # Sous-dossiers d'archives dédiés (racines)
-    archive_inputs_dir = archive_dir / "inputs"
-    archive_json_dir = archive_dir / "json_data"
-
-    # Créer les dossiers racines nécessaires
-    inputs_dir.mkdir(parents=True, exist_ok=True)
-    archive_dir.mkdir(parents=True, exist_ok=True)
-    archive_inputs_dir.mkdir(parents=True, exist_ok=True)
-    archive_json_dir.mkdir(parents=True, exist_ok=True)
-    errors_dir.mkdir(parents=True, exist_ok=True)
-    logs_dir.mkdir(parents=True, exist_ok=True)
-    json_data_dir.mkdir(parents=True, exist_ok=True)
-    backups_dir.mkdir(parents=True, exist_ok=True)
-
-    # Dossier de travail pour les logs décompressés
-    processing_dir = inputs_dir / "processing_data"
-    processing_dir.mkdir(parents=True, exist_ok=True)
+    inputs_dir = layout.inputs_dir
+    processing_dir = layout.processing_dir
+    archive_inputs_dir = layout.archive_inputs_dir
+    archive_json_dir = layout.archive_json_dir
+    errors_dir = layout.errors_dir
+    logs_dir = layout.logs_dir
+    json_data_dir = layout.json_data_dir
+    backups_dir = layout.backups_dir
 
     # Décompresser les fichiers *.log.gz vers processing_data et sauvegarder les .gz
     created_logs = decompress_audit_gz_in_inputs(inputs_dir, backups_dir)
@@ -231,7 +216,9 @@ def main(argv: List[str] | None = None) -> None:
         print(f"📦 Déplacé vers    : {target_dir}")
 
         # Optionnel : persistance en base de données pour ce fichier
-        persist_all_json_to_db()
+        persist_all_json_to_db(skip_init=True)
+        if not args.no_cleanup:
+            _print_cleanup_summary(run_cleanup(layout, cleanup_config))
         return
 
     # Mode 2 : batch sur le dossier d'inputs (storage/inputs/processing_data)
@@ -275,7 +262,7 @@ def main(argv: List[str] | None = None) -> None:
         remaining_json = list(json_data_dir.glob("*.json"))
         if remaining_json:
             print(f"ℹ️  Aucun nouveau fichier *.log, mais {len(remaining_json)} fichier(s) JSON à persister.")
-            persist_all_json_to_db()
+            persist_all_json_to_db(skip_init=True)
         else:
             print(
                 f"ℹ️  Aucun fichier *.log trouvé dans {processing_dir} "
@@ -283,7 +270,10 @@ def main(argv: List[str] | None = None) -> None:
             )
     else:
         # Après traitement de tous les fichiers, persister l'ensemble des JSON en base
-        persist_all_json_to_db()
+        persist_all_json_to_db(skip_init=True)
+
+    if not args.no_cleanup:
+        _print_cleanup_summary(run_cleanup(layout, cleanup_config))
 
 
 if __name__ == "__main__":

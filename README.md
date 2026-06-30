@@ -49,14 +49,17 @@ cp env.sample .env
 
 Variables importantes dans `.env` :
 
-- **Répertoires de travail**
-  - `STORAGE_DIR` : dossier racine de travail (ex. `storage`)
-  - `INPUTS_SUBDIR`, `ARCHIVES_SUBDIR`, `JSON_DATA_SUBDIR`, `ERRORS_SUBDIR`, `LOGS_SUBDIR`
+- **ROOT_DIR** : dossier racine (ex. `storage` ou `/opt/abis-ingestor/storage`)
+  - sous-dossiers créés automatiquement : `inputs/`, `json_data/`, `archives/`, `errors/`, `logs/`, `backups/`
 - **Base de données**
   - soit `DB_DSN` complet (ex. `postgresql+psycopg2://user:pwd@host:5432/db`)
   - soit `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, `DB_PASSWORD`
+  - `DB_SCHEMA` : schéma PostgreSQL cible (défaut `abis`)
+  - `INIT_DB` : `true` pour appliquer `schema.sql` au démarrage du handler, `false` sinon
+  - retry : `MAX_RETRY_DB`, `DB_RETRY_DELAY_BASE`, `DB_RETRY_DELAY_MAX`, `DB_RETRY_BACKOFF_MULTIPLIER`
+  - cleanup : `CLEANUP_*_AFTER_DAYS`, `DISK_SPACE_THRESHOLD_GB`, `DISK_SPACE_TARGET_GB`
 
-Initialiser le schéma en base (depuis `projets/abis_logs_ingestor`) :
+Initialiser le schéma manuellement (sans `INIT_DB=true`) :
 
 ```bash
 python db_scripts/init_db.py
@@ -81,7 +84,7 @@ Le handler :
 - parse chaque `.log`,
 - écrit les JSON dans `storage/json_data`,
 - archive les logs et JSON par date dans `storage/archives/...`,
-- persiste les JSON en base (table `abis.events`).
+- persiste les JSON en base (table `{DB_SCHEMA}.events`, défaut `abis.events`).
 
 Les journaux d'exécution sont écrits dans `storage/logs/<YYYYMMDD>/..._stats.log`.
 

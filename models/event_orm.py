@@ -11,7 +11,8 @@ from .sa_base import Base
 
 class EventORM(Base):
     """
-    Modèle ORM SQLAlchemy mappant la table `abis.events`.
+    Modèle ORM SQLAlchemy mappant la table `{schema}.events`.
+    Le schéma effectif est défini via DB_SCHEMA (configure_orm_schema).
     """
 
     __tablename__ = "events"

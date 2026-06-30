@@ -1,9 +1,8 @@
 from __future__ import annotations
 
 import json
-import os
 from pathlib import Path
-from typing import Dict, Iterable, List
+from typing import Dict, List
 from datetime import datetime
 import re
 
@@ -11,58 +10,31 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 
 from ..repository import events_model_to_database, json_to_event_model
-
-
-def _load_env(env_path: Path) -> Dict[str, str]:
-    """Charge un fichier .env simple, puis fusionne avec os.environ."""
-    env: Dict[str, str] = {}
-    if env_path.is_file():
-        for line in env_path.read_text(encoding="utf-8").splitlines():
-            line = line.strip()
-            if not line or line.startswith("#"):
-                continue
-            if "=" not in line:
-                continue
-            key, value = line.split("=", 1)
-            env[key.strip()] = value.strip()
-    merged = {**env}
-    merged.update(os.environ)
-    return merged
-
-
-def _build_db_url(env: Dict[str, str]) -> str:
-    """Construit une URL SQLAlchemy PostgreSQL à partir de DB_DSN ou des champs séparés."""
-    if env.get("DB_DSN"):
-        return env["DB_DSN"]
-
-    host = env.get("DB_HOST", "localhost")
-    port = env.get("DB_PORT", "5432")
-    name = env.get("DB_NAME", "abis")
-    user = env.get("DB_USER", "postgres")
-    password = env.get("DB_PASSWORD", "")
-
-    return f"postgresql+psycopg2://{user}:{password}@{host}:{port}/{name}"
-
+from ..retry import DbRetryConfig, db_retry_config_from_env, run_with_db_retry
+from ..storage import ensure_storage_layout, layout_from_env, load_env
+from ..db_config import (
+    DbConfig,
+    build_sqlalchemy_url,
+    configure_orm_schema,
+    db_config_from_env,
+    maybe_initialize_database,
+)
 
 _AUDITLOG_DATE_RE = re.compile(r"auditlog-(\d{4}-\d{2}-\d{2})_")
 
 
 def _extract_date_folder_from_json(name: str) -> str:
-    """
-    Extrait une date (YYYYMMDD) à partir d'un nom de fichier JSON de type
-    `auditlog-2025-11-10_07.0.json`.
-    Si aucune date n'est trouvée, retourne la date du jour.
-    """
+    """Extrait YYYYMMDD depuis un nom auditlog-YYYY-MM-DD_*.json."""
     m = _AUDITLOG_DATE_RE.search(name)
     if m:
         return m.group(1).replace("-", "")
     return datetime.now().strftime("%Y%m%d")
 
 
-def _open_session(project_root: Path) -> Session:
-    env = _load_env(project_root / ".env")
-    url = _build_db_url(env)
-    engine = create_engine(url, future=True)
+def _open_session(db_config: DbConfig) -> Session:
+    configure_orm_schema(db_config.schema)
+    url = build_sqlalchemy_url(db_config)
+    engine = create_engine(url, future=True, pool_pre_ping=True)
     return Session(engine)
 
 
@@ -92,53 +64,77 @@ def persist_json_file_to_db(json_path: Path, session: Session) -> int:
     return len(ids)
 
 
-def persist_all_json_to_db() -> None:
-    """
-    Parcourt le dossier storage/json_data et persiste tous les fichiers *.json
-    dans la base `abis.events`.
+def _persist_json_file_with_retry(
+    json_path: Path,
+    db_config: DbConfig,
+    retry_config: DbRetryConfig,
+) -> int:
+    """Persiste un fichier JSON avec retry et session dédiée par tentative."""
 
-    Cette fonction peut être appelée depuis le handler après la génération
-    des fichiers JSON, ou bien exécutée comme script autonome.
+    def _attempt() -> int:
+        session = _open_session(db_config)
+        try:
+            return persist_json_file_to_db(json_path, session)
+        except Exception:
+            session.rollback()
+            raise
+        finally:
+            session.close()
+
+    return run_with_db_retry(
+        _attempt,
+        retry_config,
+        operation_name=f"persistance {json_path.name}",
+    )
+
+
+def persist_all_json_to_db(*, skip_init: bool = False) -> None:
+    """
+    Parcourt le dossier json_data/ et persiste tous les fichiers *.json
+    dans la base (schema configurable via DB_SCHEMA), avec retry sur erreurs transitoires.
+
+    Les fichiers en échec définitif restent dans json_data/ (non archivés).
     """
     project_root = Path(__file__).resolve().parent.parent
+    env = load_env(project_root / ".env")
+    if skip_init:
+        db_config = db_config_from_env(env)
+        configure_orm_schema(db_config.schema)
+    else:
+        db_config = maybe_initialize_database(project_root, env)
+    layout = layout_from_env(env, project_root)
+    ensure_storage_layout(layout)
+    retry_config = db_retry_config_from_env(env)
 
-    # Charger la configuration storage depuis .env
-    env = _load_env(project_root / ".env")
+    json_data_dir = layout.json_data_dir
+    archive_json_dir = layout.archive_json_dir
 
-    storage_root = Path(env.get("STORAGE_DIR", "storage"))
-    if not storage_root.is_absolute():
-        storage_root = project_root / storage_root
+    total = 0
+    failed = 0
 
-    json_data_dir = storage_root / env.get("JSON_DATA_SUBDIR", "json_data")
-
-    # Dossier d'archives pour les JSON déjà persistés
-    archive_dir = storage_root / env.get("ARCHIVES_SUBDIR", "archives")
-    archive_json_dir = archive_dir / "json_data"
-
-    json_data_dir.mkdir(parents=True, exist_ok=True)
-    archive_dir.mkdir(parents=True, exist_ok=True)
-    archive_json_dir.mkdir(parents=True, exist_ok=True)
-
-    session = _open_session(project_root)
-    try:
-        total = 0
-        for json_path in sorted(json_data_dir.glob("*.json")):
-            inserted = persist_json_file_to_db(json_path, session)
+    for json_path in sorted(json_data_dir.glob("*.json")):
+        try:
+            inserted = _persist_json_file_with_retry(json_path, db_config, retry_config)
             print(f"✓ {inserted} événements insérés depuis {json_path}")
             total += inserted
-            # Déterminer le sous-dossier daté à partir du nom du fichier JSON
+
             date_folder = _extract_date_folder_from_json(json_path.name)
             archive_json_date_dir = archive_json_dir / date_folder
             archive_json_date_dir.mkdir(parents=True, exist_ok=True)
-            # Archiver le fichier JSON traité dans un sous-dossier daté
             target = archive_json_date_dir / json_path.name
             json_path.replace(target)
-        print(f"Total événements insérés : {total}")
-    finally:
-        session.close()
+        except Exception as exc:
+            failed += 1
+            print(
+                f"✗ Échec persistance {json_path.name} après {retry_config.max_retries} "
+                f"tentative(s): {exc}",
+                flush=True,
+            )
+
+    print(f"Total événements insérés : {total}")
+    if failed:
+        print(f"Fichiers JSON non archivés (échec DB) : {failed}")
 
 
 if __name__ == "__main__":
     persist_all_json_to_db()
-
-
