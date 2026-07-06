@@ -23,10 +23,25 @@ def _parse_ts(value: Optional[str]) -> Optional[datetime]:
 
 
 def _extract_ref_id(obj: Mapping[str, Any]) -> Optional[str]:
-    """Extrait la clé JSON reference_id (minuscules)."""
+    """
+    Extrait ref_id depuis le JSON événement.
+
+    Priorité :
+    1. reference_id (minuscules, racine)
+    2. REQUEST_MESSAGE.referenceId (format MOSIP réel)
+    3. REQUEST_MESSAGE.reference_id
+    """
     value = obj.get("reference_id")
     if value is not None and str(value).strip() != "":
         return str(value)
+
+    request_message = obj.get("REQUEST_MESSAGE")
+    if isinstance(request_message, dict):
+        for key in ("referenceId", "reference_id"):
+            nested = request_message.get(key)
+            if nested is not None and str(nested).strip() != "":
+                return str(nested)
+
     return None
 
 
