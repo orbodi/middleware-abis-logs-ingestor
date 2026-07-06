@@ -22,6 +22,14 @@ def _parse_ts(value: Optional[str]) -> Optional[datetime]:
         return None
 
 
+def _extract_ref_id(obj: Mapping[str, Any]) -> Optional[str]:
+    """Extrait la clé JSON reference_id (minuscules)."""
+    value = obj.get("reference_id")
+    if value is not None and str(value).strip() != "":
+        return str(value)
+    return None
+
+
 def json_to_event_model(obj: Mapping[str, Any], source_file: str) -> Event:
     """
     Transforme un objet JSON (tel que produit dans json_data) en modèle Event.
@@ -42,6 +50,7 @@ def json_to_event_model(obj: Mapping[str, Any], source_file: str) -> Event:
         duration=obj.get("DURATION"),
         operation=obj.get("OPERATION"),
         reference_id=obj.get("REFERENCE_ID"),
+        ref_id=_extract_ref_id(obj),
         request_id=obj.get("REQUEST_ID"),
         request_time=_parse_ts(obj.get("REQUEST_TIME")),
         response_time=_parse_ts(obj.get("RESPONSE_TIME")),
@@ -139,6 +148,7 @@ def events_model_to_database(
             duration=event.duration,
             operation=event.operation,
             reference_id=event.reference_id,
+            ref_id=event.ref_id,
             request_id=event.request_id,
             request_time=event.request_time,
             response_time=event.response_time,

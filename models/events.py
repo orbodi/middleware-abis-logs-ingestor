@@ -34,6 +34,7 @@ class Event:
     duration: Optional[int]
     operation: Optional[str]
     reference_id: Optional[str]
+    ref_id: Optional[str]
     request_id: Optional[str]
     request_time: Optional[datetime]
     response_time: Optional[datetime]

@@ -38,6 +38,7 @@ class EventORM(Base):
     duration: Optional[int] = Column(Integer)
     operation: Optional[str] = Column(Text)
     reference_id: Optional[str] = Column(Text)
+    ref_id: Optional[str] = Column(Text)
     request_id: Optional[str] = Column(Text)
     request_time: Optional[datetime] = Column(DateTime(timezone=True))
     response_time: Optional[datetime] = Column(DateTime(timezone=True))

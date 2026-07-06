@@ -25,6 +25,7 @@ CREATE TABLE IF NOT EXISTS __DB_SCHEMA__.events (
     duration        INTEGER,
     operation       TEXT,
     reference_id    TEXT,
+    ref_id          TEXT,
     request_id      TEXT,
     request_time    TIMESTAMPTZ,
     response_time   TIMESTAMPTZ,
@@ -36,6 +37,9 @@ CREATE TABLE IF NOT EXISTS __DB_SCHEMA__.events (
     payload         JSONB NOT NULL,
     created_at      TIMESTAMPTZ DEFAULT now()
 );
+
+ALTER TABLE __DB_SCHEMA__.events
+    ADD COLUMN IF NOT EXISTS ref_id TEXT;
 
 -- ---------------------------------------------------------------------------
 -- Vues — insert / identify (déduplication)
@@ -223,6 +227,7 @@ SELECT
     e.duration,
     e.operation,
     e.reference_id,
+    e.ref_id,
     e.request_id,
     e.request_time,
     e.response_time,
