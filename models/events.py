@@ -43,11 +43,11 @@ class Event:
 
     # Sous-objets complexes
     request_message: Optional[dict[str, Any]]
-    brs_request: Optional[dict[str, Any]]
+    brs_request: Optional[dict[str, Any]]  # toujours None (NULL en base, non persisté)
     brs_response: Optional[Any]  # peut être une liste ou autre structure JSON
     response_published_to_mosip_queue: Optional[dict[str, Any]]
 
-    # Payload complet (JSON complet de l'événement)
-    payload: dict[str, Any]
+    # Payload complet : toujours None (colonne NULL en base, non persisté)
+    payload: Optional[dict[str, Any]]
 
 

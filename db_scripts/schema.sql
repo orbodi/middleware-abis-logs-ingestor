@@ -34,12 +34,16 @@ CREATE TABLE IF NOT EXISTS __DB_SCHEMA__.events (
     brs_request                       JSONB,
     brs_response                      JSONB,
     response_published_to_mosip_queue JSONB,
-    payload         JSONB NOT NULL,
+    payload         JSONB,
     created_at      TIMESTAMPTZ DEFAULT now()
 );
 
 ALTER TABLE __DB_SCHEMA__.events
     ADD COLUMN IF NOT EXISTS ref_id TEXT;
+
+-- payload n'est plus persisté (NULL) : lever la contrainte sur les bases existantes
+ALTER TABLE __DB_SCHEMA__.events
+    ALTER COLUMN payload DROP NOT NULL;
 
 -- ---------------------------------------------------------------------------
 -- Vues — insert / identify (déduplication)

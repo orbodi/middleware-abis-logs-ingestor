@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from datetime import datetime
+import re
 from typing import Any, Iterable, List, Mapping, Optional
 
 from sqlalchemy.orm import Session
@@ -8,14 +9,19 @@ from sqlalchemy.orm import Session
 from ..models.events import Event
 from ..models.event_orm import EventORM
 
+_FRACTION_RE = re.compile(r"\.(\d+)")
+
 
 def _parse_ts(value: Optional[str]) -> Optional[datetime]:
     """Parse un timestamp ISO8601 (avec ou sans 'Z') en datetime Python."""
     if not value:
         return None
-    v = value.strip()
+    v = str(value).strip()
     if v.endswith("Z"):
-        v = v.replace("Z", "+00:00")
+        v = v[:-1] + "+00:00"
+    # Python < 3.11 (prod en 3.8) n'accepte que 3 ou 6 décimales : on normalise
+    # les fractions de seconde à 6 chiffres (les nanosecondes MOSIP sont tronquées).
+    v = _FRACTION_RE.sub(lambda m: "." + (m.group(1) + "000000")[:6], v, count=1)
     try:
         return datetime.fromisoformat(v)
     except ValueError:
@@ -71,10 +77,12 @@ def json_to_event_model(obj: Mapping[str, Any], source_file: str) -> Event:
         response_time=_parse_ts(obj.get("RESPONSE_TIME")),
         brs_url=obj.get("BRS_URL"),
         request_message=obj.get("REQUEST_MESSAGE"),
-        brs_request=obj.get("BRS_REQUEST"),
+        # BRS_REQUEST volontairement non persisté : NULL en base.
+        brs_request=None,
         brs_response=obj.get("BRS_RESPONSE"),
         response_published_to_mosip_queue=obj.get("RESPONSE_PUBLISHED_TO_MOSIP_QUEUE"),
-        payload=dict(obj),
+        # Payload complet volontairement non persisté : NULL en base.
+        payload=None,
     )
 
 

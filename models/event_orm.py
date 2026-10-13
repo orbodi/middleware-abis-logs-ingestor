@@ -47,12 +47,14 @@ class EventORM(Base):
 
     # Sous-objets JSONB
     request_message: Optional[dict[str, Any]] = Column(JSONB)
-    brs_request: Optional[dict[str, Any]] = Column(JSONB)
+    # Non persisté : None doit donner un NULL SQL (pas le JSON 'null').
+    brs_request: Optional[dict[str, Any]] = Column(JSONB(none_as_null=True))
     brs_response: Optional[Any] = Column(JSONB)
     response_published_to_mosip_queue: Optional[dict[str, Any]] = Column(JSONB)
 
-    # Payload complet
-    payload: dict[str, Any] = Column(JSONB, nullable=False)
+    # Payload complet — non persisté : None doit donner un NULL SQL
+    # (sans none_as_null=True, SQLAlchemy écrirait le JSON 'null').
+    payload: Optional[dict[str, Any]] = Column(JSONB(none_as_null=True), nullable=True)
 
     created_at: datetime = Column(
         DateTime(timezone=True),

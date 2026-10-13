@@ -118,7 +118,7 @@ def maybe_initialize_database(project_root: Path, env: Dict[str, str]) -> DbConf
 
 def configure_orm_schema(schema: str) -> str:
     """Applique le schéma PostgreSQL au modele ORM."""
-    from models.event_orm import EventORM
+    from .models.event_orm import EventORM
 
     schema = validate_schema_name(schema)
     EventORM.__table__.schema = schema
